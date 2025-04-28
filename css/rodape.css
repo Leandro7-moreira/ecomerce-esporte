@@ -15,6 +15,17 @@
     color: var(--accent); /* Cor de destaque para o título */
 }
 
+/* Container geral para alinhar pagamento e selos lado a lado */
+.pagamento-selos-container {
+    display: flex; /* Ativa layout lado a lado */
+    justify-content: center; /* Centraliza os dois blocos na horizontal */
+    gap: 40px; /* Espaçamento entre pagamento e selos */
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+    margin: 20px auto; /* Espaço vertical e centraliza */
+    max-width: 1000px; /* Define a largura máxima do container */
+    padding: 0 20px; /* Pequeno espaçamento lateral */
+}
+
 /* Lista de bandeiras de pagamento */
 .bandeiras-pagamento {
     list-style: none; /* Remove os marcadores */
