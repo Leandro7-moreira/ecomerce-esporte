@@ -49,7 +49,7 @@
 /* Grid de produtos - layout responsivo de cards */
 .products-grid {
     display: grid; /* Define grid para disposição dos produtos */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta 3-4 produtos por linha */
+    grid-template-columns: repeat(3, 1fr); /* Define 3 produtos por linha */
     gap: 30px; /* Espaçamento entre produtos */
     padding: 2rem; /* Espaçamento interno */
     background-color: var(--background); /* Fundo escuro para a seção de produtos */

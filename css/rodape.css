@@ -1,11 +1,12 @@
 /* Seção de pagamento do rodapé */
 .pagamento {
-    background-color: var(--primary); /* Fundo escuro para combinar com o restante do site */
-    padding: 20px; /* Espaço interno */
-    border-radius: 10px; /* Bordas mais arredondadas para modernidade */
-    flex: 1; /* Faz os selos ocuparem espaço proporcional */
-    max-width: 400px; /* Limita a largura para melhor alinhamento */
+    padding: 0; /* Remove o espaçamento interno */
+    border-radius: 0; /* Remove bordas arredondadas */
+    flex: 1; /* Faz a seção ocupar espaço proporcional */
+    max-width: 48%; /* Limita a largura para caber lado a lado */
     text-align: center; /* Centraliza o conteúdo */
+    box-shadow: none; /* Remove a sombra */
+    background: none; /* Remove o fundo */
 }
 
 /* Título da seção de pagamento */
@@ -18,12 +19,15 @@
 /* Container geral para alinhar pagamento e selos lado a lado */
 .pagamento-selos-container {
     display: flex; /* Ativa layout lado a lado */
-    justify-content: center; /* Centraliza os dois blocos na horizontal */
+    justify-content: space-between; /* Espaça os itens uniformemente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
     gap: 40px; /* Espaçamento entre pagamento e selos */
     flex-wrap: wrap; /* Permite quebrar linha no mobile */
     margin: 20px auto; /* Espaço vertical e centraliza */
     max-width: 1000px; /* Define a largura máxima do container */
-    padding: 0 20px; /* Pequeno espaçamento lateral */
+    padding: 0; /* Remove o espaçamento interno */
+    background: none; /* Remove o fundo do container */
+    box-shadow: none; /* Remove a sombra do container */
 }
 
 /* Lista de bandeiras de pagamento */
@@ -60,12 +64,13 @@
 
 /* Seção de selos de segurança */
 .selos {
-    background-color: var(--primary); /* Fundo escuro */
-    padding: 20px; /* Espaço interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    flex: 1; /* Faz os selos ocuparem espaço proporcional */
-    max-width: 400px; /* Limita a largura */
+    padding: 0; /* Remove o espaçamento interno */
+    border-radius: 0; /* Remove bordas arredondadas */
+    flex: 1; /* Faz a seção ocupar espaço proporcional */
+    max-width: 48%; /* Limita a largura para caber lado a lado */
     text-align: center; /* Centraliza o conteúdo */
+    box-shadow: none; /* Remove a sombra */
+    background: none; /* Remove o fundo */
 }
 
 /* Título da seção de selos */
@@ -77,9 +82,12 @@
 
 /* Lista de selos */
 .selos ul {
-    list-style: none;
+    list-style: none; /* Remove os marcadores */
     padding: 0;
     margin: 0;
+    display: flex; /* Exibe lado a lado */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaçamento maior entre ícones */
 }
 
 /* Imagens dos selos */
