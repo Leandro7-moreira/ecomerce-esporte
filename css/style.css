@@ -46,6 +46,26 @@
     letter-spacing: 1px; /* Espaçamento entre letras */
 }
 
+/* Logo tipográfica estilizada */
+/* Logo com efeito neon */
+.logo {
+    font-size: 2.2rem; /* Tamanho maior para destacar */
+    font-weight: 700; /* Negrito forte para dar presença */
+    color: var(--accent); /* Cor neon principal */
+    text-transform: uppercase; /* Todas letras maiúsculas */
+    letter-spacing: 1.5px; /* Espaçamento maior entre letras */
+    text-align: center; /* Centraliza a logo */
+    text-shadow: 
+        0 0 5px var(--accent), /* Pequeno brilho */
+        0 0 10px var(--accent), /* Brilho um pouco maior */
+        0 0 20px var(--accent); /* Brilho mais suave para espalhar */
+}
+
+.slogan {
+    color: var(--text-light); /* Cor para o texto */
+    font-size: 0.5rem; /* Tamanho da letra */
+}
+
 /* Grid de produtos - layout responsivo de cards */
 .products-grid {
     display: grid; /* Define grid para disposição dos produtos */
@@ -115,6 +135,71 @@
     font-size: 0.9rem; /* Tamanho da fonte da descrição */
 }
 
+
+/* Oculta o container de detalhes do produto inicialmente */
+.hidden {
+    display: none; /* Esconde o elemento com a classe "hidden" */
+  }
+  
+  /* Exibe o container de detalhes do produto */
+  #product-details {
+    display: block; /* Torna o container visível */
+    padding: 2rem; /* Adiciona espaçamento interno */
+    background-color: var(--background); /* Define a cor de fundo com a variável global */
+    color: var(--text-light); /* Define a cor do texto com a variável global */
+  }
+  
+  /* Botão de voltar */
+  .back-button {
+    background-color: var(--accent); /* Define a cor de fundo do botão com a variável global */
+    color: #fff; /* Define a cor do texto como branco */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 20px; /* Adiciona espaçamento interno ao botão */
+    border-radius: 5px; /* Arredonda as bordas do botão */
+    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do botão */
+    position: absolute; /* Posiciona o botão de forma absoluta */
+    top: 850px; /* Define a distância do topo */
+    right: 20px; /* Define a distância do lado direito */
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  }
+  
+  .back-button:hover {
+    background-color: #00cc6e; /* Altera a cor de fundo ao passar o mouse */
+  }
+  
+  /* Oculta o botão de voltar no estado inicial */
+  .hidden .back-button {
+    display: none; /* Esconde o botão quando o container está oculto */
+  }
+  
+  /* Estilo dos itens na nova página */
+  .product-item {
+    display: flex; /* Usa flexbox para organizar os itens */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin-bottom: 20px; /* Adiciona espaço abaixo de cada item */
+  }
+  
+  .product-item img {
+    max-width: 200px; /* Define a largura máxima da imagem */
+    border-radius: 10px; /* Arredonda as bordas da imagem */
+    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
+  }
+  
+  .product-item button {
+    background-color: var(--accent); /* Define a cor de fundo do botão com a variável global */
+    color: #fff; /* Define a cor do texto como branco */
+    border: none; /* Remove a borda do botão */
+    padding: 10px 15px; /* Adiciona espaçamento interno ao botão */
+    border-radius: 5px; /* Arredonda as bordas do botão */
+    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+  }
+  
+  .product-item button:hover {
+    background-color: #00cc6e; /* Altera a cor de fundo ao passar o mouse */
+  }
+
 /* Botão fixo do WhatsApp */
 .whatsapp-icon {
     position: fixed; /* Fixa o botão na tela, mesmo ao rolar */
@@ -153,6 +238,8 @@
     color: var(--text-dark); /* Texto de cor secundária */
     padding: 2rem; /* Espaçamento interno */
     text-align: center; /* Centraliza o conteúdo */
+    justify-content: space-between; /* Espaça os itens uniformemente */
+    align-items: flex-start; /* Alinha os itens no topo */
 }
 
 /* Ícones das formas de pagamento */
@@ -168,8 +255,22 @@
     color: var(--text-light); /* Texto claro para contraste */
 }
 
-/* Responsividade para telas menores que 600px */
-@media (max-width: 600px) {
+footer p {
+    font-size: 0.9rem; /* Define um tamanho de fonte discreto e legível */
+    color: var(--text-dark); /* Usa a cor de texto secundária (cinza claro) */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin: 20px auto; /* Adiciona margem acima e abaixo, centraliza nas laterais */
+    padding: 10px; /* Adiciona espaçamento interno */
+    max-width: 800px; /* Limita a largura para não esticar muito em telas grandes */
+    background-color: var(--primary); /* Fundo escuro combinando com o rodapé */
+    border-radius: 8px; /* Arredonda levemente os cantos */
+    box-shadow: 0 2px 8px rgba(0, 255, 136, 0.15); /* Sombra discreta com a cor de destaque */
+    letter-spacing: 1px; /* Espaçamento entre letras para deixar mais elegante */
+    line-height: 1.5; /* Melhora a legibilidade */
+}
+
+  /* Responsividade para telas menores que 600px */
+  @media (max-width: 600px) {
     .products-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta o número de produtos por linha no celular */
     }
@@ -179,4 +280,4 @@
     .slider .slide {
         height: 200px; /* Reduz altura de cada imagem do slider */
     }
-}
+}  

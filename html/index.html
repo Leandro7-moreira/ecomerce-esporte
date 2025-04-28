@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Loja esportiva com os melhores produtos para você. Confira nossas ofertas e compre com segurança.">
+  <meta name="description" content="Rodapé com informações de pagamento e segurança.">
+  <meta name="keywords" content="rodapé, pagamento, segurança, loja online, e-commerce">
   
   <title>E-commerce Esportivo</title>
 
@@ -22,7 +26,11 @@
       </section>
 
   <header class="header">
-    <h1>Loja Esportiva</h1>
+    <div class="logo">
+        Arquibancada Store
+      </div>
+        <div class="slogan">
+            <h1>As melhores camisas de time em um só lugar!</h1> 
     
   </header>
 
@@ -30,216 +38,106 @@
       <i class='bx bxl-whatsapp'></i>
     </a>
 
-  <main class="products-grid">
-    <!-- Produto 1 -->
-    <div class="product">
-      <div class="product-images">
-        <img src="img/produto1a.jpg" alt="Imagem principal do Produto 1" class="main-img" onclick="zoomImage(this)" loading="lazy">
-        <div class="thumbs">
-          <img src="img/produto1a.jpg" alt="Miniatura do Produto 1a" onclick="changeImage(this)" loading="lazy">
-          <img src="img/produto1b.jpg" alt="Miniatura do Produto 1b" onclick="changeImage(this)" loading="lazy">
-          <img src="img/produto1c.jpg" alt="Miniatura do Produto 1c" onclick="changeImage(this)" loading="lazy">
-        </div>
-      </div>
-      <h2>Produto Esportivo 1</h2>
-      <p>Descrição breve do produto esportivo.</p>
+<main class="products-grid">
+  <!-- Produto 1 -->
+  <div class="product" onclick="showProductDetails('produto1')">
+    <div class="product-images">
+      <img src="img/produto1a.jpg" alt="Imagem principal do Produto 1" class="main-img" loading="lazy">
     </div>
+    <h2>Produto Esportivo 1</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
 
-    <!-- Produto 2 -->
-    <div class="product">
-      <div class="product-images">
-        <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-        <div class="thumbs">
-          <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-          <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-          <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-        </div>
-      </div>
-      <h2>Produto Esportivo 2</h2>
-      <p>Descrição breve do produto esportivo.</p>
+  <!-- Produto 2 -->
+  <div class="product" onclick="showProductDetails('produto2')">
+    <div class="product-images">
+      <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" loading="lazy">
     </div>
+    <h2>Produto Esportivo 2</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
 
-     <!-- Produto 3 -->
-     <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
+  <!-- Produto 3 -->
+  <div class="product" onclick="showProductDetails('produto3')">
+    <div class="product-images">
+      <img src="img/produto3a.jpg" alt="Imagem principal do Produto 3" class="main-img" loading="lazy">
+    </div>
+    <h2>Produto Esportivo 3</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
 
-       <!-- Produto 4 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
+  <!-- Produto 4 -->
+  <div class="product" onclick="showProductDetails('produto4')">
+    <div class="product-images">
+      <img src="img/produto4a.jpg" alt="Imagem principal do Produto 4" class="main-img" loading="lazy">
+    </div>
+    <h2>Produto Esportivo 4</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
 
-       <!-- Produto 5 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
+  <!-- Produto 5 -->
+  <div class="product" onclick="showProductDetails('produto5')">
+    <div class="product-images">
+      <img src="img/produto5a.jpg" alt="Imagem principal do Produto 5" class="main-img" loading="lazy">
+    </div>
+    <h2>Produto Esportivo 5</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
 
-       <!-- Produto 6 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
+  <!-- Produto 6 -->
+  <div class="product" onclick="showProductDetails('produto6')">
+    <div class="product-images">
+      <img src="img/produto6a.jpg" alt="Imagem principal do Produto 6" class="main-img" loading="lazy">
+    </div>
+    <h2>Produto Esportivo 6</h2>
+    <p>Descrição breve do produto esportivo.</p>
+  </div>
+</main>
 
-       <!-- Produto 7 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-       <!-- Produto 8 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-       <!-- Produto 9 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-       <!-- Produto 10 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-      <!-- Produto 11 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-      <!-- Produto 12 -->
-    <div class="product">
-        <div class="product-images">
-          <img src="img/produto2a.jpg" alt="Imagem principal do Produto 2" class="main-img" onclick="zoomImage(this)" loading="lazy">
-          <div class="thumbs">
-            <img src="img/produto2a.jpg" alt="Miniatura do Produto 2a" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2b.jpg" alt="Miniatura do Produto 2b" onclick="changeImage(this)" loading="lazy">
-            <img src="img/produto2c.jpg" alt="Miniatura do Produto 2c" onclick="changeImage(this)" loading="lazy">
-          </div>
-        </div>
-        <h2>Produto Esportivo 2</h2>
-        <p>Descrição breve do produto esportivo.</p>
-      </div>
-
-    <!-- Você pode adicionar mais produtos aqui seguindo o padrão -->
-  </main>
+<!-- Container para exibir os detalhes do produto -->
+<div id="product-details" class="hidden">
+  <button onclick="goBack()" class="back-button">Voltar</button>
+  <div id="product-content"></div>
+</div>
 
   <footer class="footer">
     <section class="pagamento-selos">
-      <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-          <!-- Seção de Pagamento -->
-          <div class="pagamento col-md-8">
-            <h2 class="titulo cor-secundaria">Pague com</h2>
-            <ul class="bandeiras-pagamento">
-              <li><img src="../cartoes/visa.png" alt="Visa" title="Visa"></li>
-              <li><img src="../cartoes/mastercard.png" alt="MasterCard" title="MasterCard"></li>
-              <li><img src="../cartoes/hipercard.png" alt="Hipercard" title="Hipercard"></li>
-              <li><img src="../cartoes/elo.png" alt="Elo" title="Elo"></li>
-              <li><img src="../cartoes/diners.png" alt="Diners Club" title="Diners Club"></li>
-              <li><img src="../cartoes/amex.png" alt="American Express" title="American Express"></li>
-            </ul>
+                <!-- Seção de Pagamento -->
+                <div class="pagamento col-md-8">
+                    <h2 class="titulo cor-secundaria">Pague com</h2>
+                    <ul class="bandeiras-pagamento">
+                        <li><img src="../cartoes/visa.png" alt="Visa" title="Visa"></li>
+                        <li><img src="../cartoes/mastercard.png" alt="MasterCard" title="MasterCard"></li>
+                        <li><img src="../cartoes/hipercard.png" alt="Hipercard" title="Hipercard"></li>
+                        <li><img src="../cartoes/logo-da-bandeira-elo.png" alt="Elo" title="Elo"></li>
+                        <li><img src="../cartoes/diners.png" alt="Diners Club" title="Diners Club"></li>
+                        <li><img src="../cartoes/amex.png" alt="American Express" title="American Express"></li>
+                    </ul>
 
-            <ul class="gateways-rodape">
-              <li class="col-md-3">
-                <img src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/pix-logo.png?v=7cbebeb" 
-                     alt="Pix" 
-                     class="logo-rodape-pix-pagali">
-              </li>
-            </ul>
-          </div>
+                    <ul class="gateways-rodape">
+                        <li class="col-md-3">
+                            <img src="https://cdn.awsli.com.br/production/static/img/formas-de-pagamento/pix-logo.png?v=7cbebeb" 
+                                alt="Pix" 
+                                class="logo-rodape-pix-pagali">
+                        </li>
+                    </ul>
+                </div>
 
-          <!-- Seção de Selos -->
-          <div class="selos col-md-4">
-            <h2 class="titulo cor-secundaria">Qualidade e Segurança</h2>
-            <ul>
-              <li>
-                <img src="https://cdn.awsli.com.br/production/static/img/struct/stamp_encryptssl.png" 
-                     alt="Site Seguro">
-              </li>
-            </ul>
-          </div>
+                <!-- Seção de Selos -->
+                <div class="selos col-md-4">
+                    <h2 class="titulo cor-secundaria">Qualidade e Segurança</h2>
+                    <ul>
+                        <li>
+                            <img src="https://cdn.awsli.com.br/production/static/img/struct/stamp_encryptssl.png" 
+                                alt="Site Seguro">
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <p>&copy; 2025 - Todos os direitos reservados.</p>

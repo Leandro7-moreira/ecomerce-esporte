@@ -1,110 +1,111 @@
-/* Seção de pagamento do rodapé */
+/* Seção container principal de pagamento e segurança */
+.pagamento-selos {
+    padding: 40px 20px; /* Adiciona espaçamento interno em cima/baixo e nas laterais */
+    background-color: var(--background); /* Define fundo escuro para a seção */
+}
+
+/* Ajustes para o container da row */
+.pagamento-selos .container {
+    max-width: 1200px; /* Define largura máxima para a área de conteúdo */
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+}
+
+/* Define layout da linha */
+.pagamento-selos .row {
+    display: flex; /* Usa flexbox para dispor os elementos lado a lado */
+    flex-wrap: wrap; /* Permite quebra de linha se a tela for pequena */
+    justify-content: space-between; /* Distribui espaço igualmente entre os blocos */
+    align-items: flex-start; /* Alinha os blocos pelo topo */
+    position: relative; /* Torna possível posicionar elementos como o separador */
+}
+
+/* Seção de pagamento */
 .pagamento {
-    padding: 0; /* Remove o espaçamento interno */
-    border-radius: 0; /* Remove bordas arredondadas */
-    flex: 1; /* Faz a seção ocupar espaço proporcional */
-    max-width: 48%; /* Limita a largura para caber lado a lado */
+    color: var(--accent); /* Define cor do texto como a cor de destaque */
+    padding: 20px; /* Espaçamento interno da seção */
+    border-radius: 5px; /* Borda levemente arredondada */
+    flex: 1 1 50%; /* Flexível e ocupa 50% da linha */
+    max-width: 50%; /* Limita a largura máxima a 50% */
     text-align: center; /* Centraliza o conteúdo */
-    box-shadow: none; /* Remove a sombra */
-    background: none; /* Remove o fundo */
 }
 
-/* Título da seção de pagamento */
-.pagamento .titulo {
-    font-size: 1.5rem; /* Tamanho da fonte do título */
-    margin-bottom: 15px; /* Espaço abaixo do título */
-    color: var(--accent); /* Cor de destaque para o título */
-}
-
-/* Container geral para alinhar pagamento e selos lado a lado */
-.pagamento-selos-container {
-    display: flex; /* Ativa layout lado a lado */
-    justify-content: space-between; /* Espaça os itens uniformemente */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    gap: 40px; /* Espaçamento entre pagamento e selos */
-    flex-wrap: wrap; /* Permite quebrar linha no mobile */
-    margin: 20px auto; /* Espaço vertical e centraliza */
-    max-width: 1000px; /* Define a largura máxima do container */
-    padding: 0; /* Remove o espaçamento interno */
-    background: none; /* Remove o fundo do container */
-    box-shadow: none; /* Remove a sombra do container */
-}
-
-/* Lista de bandeiras de pagamento */
+/* Lista de bandeiras */
 .bandeiras-pagamento {
-    list-style: none; /* Remove os marcadores */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Exibe lado a lado */
-    justify-content: center; /* Centraliza os ícones */
-    gap: 15px; /* Espaçamento maior entre ícones */
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0; /* Remove padding interno da lista */
+    margin: 0; /* Remove margens externas da lista */
+    display: flex; /* Exibe bandeiras lado a lado */
+    justify-content: center; /* Centraliza bandeiras horizontalmente */
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    gap: 10px; /* Espaçamento entre as bandeiras */
+    margin-top: 50px; /* Espaço superior entre o texto e as bandeiras */
 }
 
-/* Ícones de pagamento */
-.icone-pagamento {
-    font-size: 2rem; /* Tamanho dos ícones */
-    color: var(--accent); /* Cor dos ícones */
-}
-
-/* Gateways de pagamento (ex: Mercado Pago, PayPal) */
+/* Gateway (Pix) */
 .gateways-rodape {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px; /* Espaço acima da lista */
-    display: flex;
-    justify-content: center; /* Centraliza os ícones */
-    gap: 15px; /* Espaço entre gateways */
+    list-style: none; /* Remove marcadores padrão */
+    padding: 0; /* Remove padding interno */
+    margin-top: 15px; /* Espaço superior antes do Pix */
+    display: flex; /* Exibe Pix ao lado se houver mais de um */
+    justify-content: center; /* Centraliza o Pix */
+    gap: 10px; /* Espaçamento entre os elementos */
 }
 
 .gateways-rodape img {
-    max-width: 50px; /* Limita o tamanho das imagens */
-    height: auto; /* Mantém a proporção */
-    border-radius: 6px; /* Bordas arredondadas para harmonia visual */
+    max-width: 50px; /* Limita largura máxima das imagens do Pix */
+    height: auto; /* Mantém proporção natural das imagens */
 }
 
 /* Seção de selos de segurança */
 .selos {
-    padding: 0; /* Remove o espaçamento interno */
-    border-radius: 0; /* Remove bordas arredondadas */
-    flex: 1; /* Faz a seção ocupar espaço proporcional */
-    max-width: 48%; /* Limita a largura para caber lado a lado */
-    text-align: center; /* Centraliza o conteúdo */
-    box-shadow: none; /* Remove a sombra */
-    background: none; /* Remove o fundo */
-}
-
-/* Título da seção de selos */
-.selos .titulo {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: var(--accent); /* Cor de destaque */
+    color: var(--accent); /* Cor do texto igual à cor de destaque */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+    flex: 1 1 50%; /* Flexível e ocupa 50% da linha */
+    max-width: 50%; /* Limita a largura máxima a 50% */
+    text-align: center; /* Centraliza o conteúdo da seção */
 }
 
 /* Lista de selos */
 .selos ul {
-    list-style: none; /* Remove os marcadores */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Exibe lado a lado */
-    justify-content: center; /* Centraliza os ícones */
-    gap: 15px; /* Espaçamento maior entre ícones */
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove padding da lista */
+    margin: 0; /* Remove margem da lista */
+    margin-top: 50px; /* Espaço superior entre o texto e as bandeiras */
 }
 
-/* Imagens dos selos */
 .selos img {
-    max-width: 60px; /* Tamanho máximo dos selos */
-    height: auto;
-    margin: 0 10px; /* Espaçamento entre selos */
+    max-width: 1000px; /* Limita largura máxima dos selos */
+    height: auto; /* Mantém a proporção dos selos */
 }
 
-/* Texto de direitos reservados no rodapé */
-footer p {
-    background-color: var(--primary); /* Fundo escuro */
-    text-align: center;
-    margin: 20px auto; /* Espaço acima e centraliza */
-    padding: 10px;
-    font-size: 0.85rem; /* Fonte um pouco menor */
-    color: var(--text-dark); /* Cor de texto discreto */
-    max-width: 800px; /* Largura máxima para evitar esticar em telas grandes */
-    border-radius: 8px; /* Arredondamento para visual moderno */
+/* Separador vertical entre pagamento e selos */
+.pagamento-selos .row::after {
+    content: ""; /* Gera um elemento vazio para servir de separador */
+    position: absolute; /* Posiciona o separador em relação ao container */
+    top: 0; /* Alinha o topo do separador com o topo da linha */
+    bottom: 0; /* Alinha a base do separador com o fundo da linha */
+    left: 50%; /* Posiciona o separador exatamente no centro */
+    transform: translateX(-50%); /* Ajusta o separador para ficar 100% centralizado */
+    width: 1px; /* Define a largura da linha separadora */
+    background-color: var(--text-dark); /* Define a cor da linha como cor de texto secundário */
+    opacity: 0.3; /* Deixa a linha levemente transparente */
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+    .pagamento-selos .row {
+        flex-direction: column; /* Empilha os blocos um em cima do outro */
+        align-items: center; /* Centraliza os blocos empilhados */
+    }
+
+    .pagamento, .selos {
+        max-width: 100%; /* Faz cada bloco ocupar toda a largura disponível */
+        flex: none; /* Remove comportamento flexível */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .pagamento-selos .row::after {
+        display: none; /* Esconde o separador no modo mobile */
+    }
 }
