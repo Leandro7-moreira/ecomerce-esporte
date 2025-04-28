@@ -1,0 +1,91 @@
+/* Seção de pagamento do rodapé */
+.pagamento {
+    background-color: var(--primary); /* Fundo escuro para combinar com o restante do site */
+    padding: 20px; /* Espaço interno */
+    border-radius: 10px; /* Bordas mais arredondadas para modernidade */
+    flex: 1; /* Faz os selos ocuparem espaço proporcional */
+    max-width: 400px; /* Limita a largura para melhor alinhamento */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Título da seção de pagamento */
+.pagamento .titulo {
+    font-size: 1.5rem; /* Tamanho da fonte do título */
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    color: var(--accent); /* Cor de destaque para o título */
+}
+
+/* Lista de bandeiras de pagamento */
+.bandeiras-pagamento {
+    list-style: none; /* Remove os marcadores */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Exibe lado a lado */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaçamento maior entre ícones */
+}
+
+/* Ícones de pagamento */
+.icone-pagamento {
+    font-size: 2rem; /* Tamanho dos ícones */
+    color: var(--accent); /* Cor dos ícones */
+}
+
+/* Gateways de pagamento (ex: Mercado Pago, PayPal) */
+.gateways-rodape {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px; /* Espaço acima da lista */
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaço entre gateways */
+}
+
+.gateways-rodape img {
+    max-width: 50px; /* Limita o tamanho das imagens */
+    height: auto; /* Mantém a proporção */
+    border-radius: 6px; /* Bordas arredondadas para harmonia visual */
+}
+
+/* Seção de selos de segurança */
+.selos {
+    background-color: var(--primary); /* Fundo escuro */
+    padding: 20px; /* Espaço interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    flex: 1; /* Faz os selos ocuparem espaço proporcional */
+    max-width: 400px; /* Limita a largura */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Título da seção de selos */
+.selos .titulo {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent); /* Cor de destaque */
+}
+
+/* Lista de selos */
+.selos ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Imagens dos selos */
+.selos img {
+    max-width: 60px; /* Tamanho máximo dos selos */
+    height: auto;
+    margin: 0 10px; /* Espaçamento entre selos */
+}
+
+/* Texto de direitos reservados no rodapé */
+footer p {
+    background-color: var(--primary); /* Fundo escuro */
+    text-align: center;
+    margin: 20px auto; /* Espaço acima e centraliza */
+    padding: 10px;
+    font-size: 0.85rem; /* Fonte um pouco menor */
+    color: var(--text-dark); /* Cor de texto discreto */
+    max-width: 800px; /* Largura máxima para evitar esticar em telas grandes */
+    border-radius: 8px; /* Arredondamento para visual moderno */
+}

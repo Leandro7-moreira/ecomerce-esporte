@@ -1,0 +1,165 @@
+/* Reset básico para remover margens e paddings padrões e definir fonte global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Definição de variáveis globais para as cores do tema escuro */
+  :root {
+    --background: #121212; /* Cor de fundo principal */
+    --primary: #1f1f1f;    /* Cor de elementos primários (caixas, cabeçalhos) */
+    --accent: #00ff88;     /* Cor de destaque para elementos importantes */
+    --text-light: #eeeeee; /* Cor clara para textos principais */
+    --text-dark: #999999;  /* Cor escura para textos secundários */
+  }
+  
+  /* Estilização do container principal do slider */
+  .slider {
+    position: relative; /* Para posicionar elementos filhos de forma absoluta se necessário */
+    overflow: hidden; /* Oculta imagens que ultrapassem o container */
+    height: 350px; /* Altura fixa do slider em desktops */
+  }
+  
+  /* Estilização de cada imagem dentro do slider */
+  .slider .slide {
+    width: 100%; /* Imagem ocupa toda a largura do slider */
+    height: 350px; /* Altura padrão para cada slide */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    display: none; /* Inicia todas as imagens escondidas */
+  }
+  
+  /* Exibe o slide ativo */
+  .slider .active {
+    display: block; /* Mostra apenas a imagem ativa */
+  }
+  
+  /* Estilização do cabeçalho da loja */
+  .header {
+    background-color: var(--primary); /* Fundo escuro do cabeçalho */
+    color: var(--accent); /* Cor de destaque para o texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 1.5rem; /* Espaçamento interno */
+    font-size: 1.8rem; /* Tamanho da fonte do nome da loja */
+    font-weight: bold; /* Texto em negrito */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+  }
+  
+  /* Grid de produtos - layout responsivo de cards */
+  .products-grid {
+    display: grid; /* Define grid para disposição dos produtos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta 3-4 produtos por linha */
+    gap: 30px; /* Espaçamento entre produtos */
+    padding: 2rem; /* Espaçamento interno */
+    background-color: var(--background); /* Fundo escuro para a seção de produtos */
+  }
+  
+  /* Estilo individual de cada produto */
+  .product {
+    background-color: var(--primary); /* Fundo dos cards de produto */
+    border-radius: 12px; /* Borda arredondada */
+    padding: 1.5rem; /* Espaçamento interno do card */
+    text-align: center; /* Centraliza o conteúdo */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave no hover */
+  }
+  
+  /* Animação ao passar o mouse sobre o produto */
+  .product:hover {
+    transform: translateY(-5px); /* Move levemente para cima */
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2); /* Adiciona sombra com cor do destaque */
+  }
+  
+  /* Container de imagens do produto */
+  .product-images {
+    position: relative; /* Prepara para posicionar imagens internas */
+  }
+  
+  /* Imagem principal do produto */
+  .product-images img.main-img {
+    width: 100%; /* Imagem principal ocupa 100% do card */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer; /* Indica que a imagem é clicável (para zoom) */
+    border-radius: 10px; /* Arredondamento da imagem */
+  }
+  
+  /* Miniaturas abaixo da imagem principal */
+  .product-images .thumbs {
+    margin-top: 10px; /* Espaço acima das miniaturas */
+    display: flex; /* Layout em linha para miniaturas */
+    justify-content: center; /* Centraliza miniaturas */
+    gap: 8px; /* Espaçamento entre miniaturas */
+  }
+  
+  /* Estilo de cada miniatura */
+  .product-images .thumbs img {
+    width: 50px; /* Largura padrão da miniatura */
+    height: 50px; /* Altura padrão da miniatura */
+    cursor: pointer; /* Cursor indicando clique */
+    border-radius: 6px; /* Bordas arredondadas */
+    border: 1px solid var(--accent); /* Borda com a cor de destaque */
+    object-fit: cover; /* Mantém proporções preenchendo o espaço */
+  }
+  
+  /* Título do produto */
+  .product h2 {
+    color: var(--text-light); /* Cor clara para título */
+    margin-top: 15px; /* Espaço acima do título */
+    font-size: 1.2rem; /* Tamanho do título */
+  }
+  
+  /* Descrição do produto */
+  .product p {
+    color: var(--text-dark); /* Cor mais suave para o texto de descrição */
+    margin-top: 10px; /* Espaço acima da descrição */
+    font-size: 0.9rem; /* Tamanho da fonte da descrição */
+  }
+  
+  /* Ícone fixo do WhatsApp */
+  .whatsapp-icon {
+    position: fixed; /* Fixo na tela enquanto rola */
+    bottom: 20px; /* Distância da borda inferior */
+    right: 20px; /* Distância da borda direita */
+    z-index: 1000; /* Mantém acima de outros elementos */
+  }
+  
+  /* Estilo da imagem do WhatsApp */
+  .whatsapp-icon img {
+    width: 65px; /* Tamanho do ícone */
+    height: 65px; /* Tamanho do ícone */
+  }
+  
+  /* Estilização do rodapé */
+  .footer {
+    background: var(--primary); /* Fundo escuro do rodapé */
+    color: var(--text-dark); /* Texto de cor secundária */
+    padding: 2rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+  }
+  
+  /* Ícones das formas de pagamento */
+  .footer .payments img {
+    width: 50px; /* Largura dos ícones de pagamento */
+    margin: 0 10px; /* Espaço lateral entre os ícones */
+  }
+  
+  /* Texto de segurança no rodapé */
+  .footer .security {
+    margin-top: 1rem; /* Espaço acima do aviso de segurança */
+    font-size: 0.85rem; /* Tamanho menor de fonte */
+    color: var(--text-light); /* Texto claro para contraste */
+  }
+  
+  /* Responsividade para telas menores que 600px */
+  @media (max-width: 600px) {
+    .products-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta o número de produtos por linha no celular */
+    }
+    .slider {
+      height: 200px; /* Reduz altura do slider em dispositivos móveis */
+    }
+    .slider .slide {
+      height: 200px; /* Reduz altura de cada imagem do slider */
+    }
+  }
+  
