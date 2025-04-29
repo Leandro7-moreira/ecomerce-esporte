@@ -276,7 +276,7 @@ body {
 /* Ícone dentro do botão do WhatsApp */
 .whatsapp-icon i {
     font-size: 2rem; /* Tamanho grande do ícone */
-    color: #ffffff; /* Ícone branco para contraste */
+    color: #ffffff !important; /* Define a cor branca explicitamente */
 }
 
 /* Estilização do rodapé */

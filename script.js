@@ -3,28 +3,28 @@ const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
 
 function showNextSlide() {
-  slides[currentIndex].classList.remove('active'); // Remove a classe ativa do slide atual
-  currentIndex = (currentIndex + 1) % slides.length; // Vai para o próximo slide
-  slides[currentIndex].classList.add('active'); // Adiciona a classe ativa ao próximo slide
+  slides[currentIndex].classList.remove('active'); // Remove o slide atual
+  currentIndex = (currentIndex + 1) % slides.length; // Vai para o próximo
+  slides[currentIndex].classList.add('active'); // Ativa o próximo
 }
 
 // Troca de slide a cada 5 segundos
 setInterval(showNextSlide, 5000);
 
-// Zoom ao clicar
+// Zoom ao clicar na imagem
 function zoomImage(img) {
   const zoomWindow = window.open("", "Zoom", "width=600,height=600");
   zoomWindow.document.write(`<img src="${img.src}" style="width:100%">`);
 }
 
-// Trocar imagem principal
+// Troca da imagem principal ao clicar na miniatura
 function changeImage(thumb) {
   const mainImg = thumb.closest('.product-images').querySelector('.main-img');
   mainImg.src = thumb.src;
 }
 
+// Mostrar detalhes do produto clicado
 function showProductDetails(productId) {
-  // Dados dos produtos
   const products = {
     produto1: [
       { img: 'img/produto1a.jpg', desc: 'Item 1 do Produto 1' },
@@ -58,38 +58,34 @@ function showProductDetails(productId) {
     ],
   };
 
-  // Obter os itens do produto clicado
   const productItems = products[productId];
-
-  // Atualizar o conteúdo da nova página
   const productContent = document.getElementById('product-content');
-  productContent.innerHTML = productItems
-    .map(
-      (item) => `
-      <div class="product-item">
-        <img src="${item.img}" alt="${item.desc}">
-        <p>${item.desc}</p>
-        <button onclick="contactWhatsApp()">Chamar no WhatsApp</button>
-      </div>
-    `
-    )
-    .join('');
 
-  // Exibir a nova página
+  productContent.innerHTML = productItems.map(item => `
+    <div class="product-item">
+      <img src="${item.img}" alt="${item.desc}">
+      <p>${item.desc}</p>
+      <button onclick="contactWhatsApp()">Faça seu pedido pelo WhatsApp</button>
+    </div>
+  `).join('');
+
+  // Oculta elementos da página inicial
   document.querySelector('.products-grid').classList.add('hidden');
+  document.querySelector('.slider').classList.add('hidden');
   document.getElementById('product-details').classList.remove('hidden');
+  document.querySelector('.whatsapp-icon-container').classList.add('hidden'); // Oculta botão WhatsApp
 }
 
+// Voltar para a tela inicial (grid de produtos)
 function goBack() {
-  // Voltar para a lista de produtos
   document.querySelector('.products-grid').classList.remove('hidden');
+  document.querySelector('.slider').classList.remove('hidden');
   document.getElementById('product-details').classList.add('hidden');
-
-  // Limpar o conteúdo do container de detalhes do produto
   document.getElementById('product-content').innerHTML = '';
+  document.querySelector('.whatsapp-icon-container').classList.remove('hidden'); // Exibe botão WhatsApp novamente
 }
 
+// Função para abrir o link do WhatsApp
 function contactWhatsApp() {
-  // Redirecionar para o WhatsApp
-  window.open('https://wa.me/5511999999999', '_blank');
+  window.open('https://wa.me/message/3HI4APRTY636G1', '_blank');
 }
