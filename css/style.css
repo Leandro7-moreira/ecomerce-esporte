@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased; /* Melhora a renderização de fontes */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Definição de variáveis globais para as cores do tema escuro */
@@ -13,26 +15,13 @@
     --accent: #00ff88;     /* Cor de destaque para elementos importantes */
     --text-light: #eeeeee; /* Cor clara para textos principais */
     --text-dark: #999999;  /* Cor escura para textos secundários */
+    --transition: all 0.3s ease; /* Variável para transições */
+    --shadow: 0 10px 20px rgba(0, 255, 136, 0.2); /* Variável para sombras */
 }
 
-/* Estilização do container principal do slider */
-.slider {
-    position: relative; /* Para posicionar elementos filhos de forma absoluta se necessário */
-    overflow: hidden; /* Oculta imagens que ultrapassem o container */
-    height: 350px; /* Altura fixa do slider em desktops */
-}
-
-/* Estilização de cada imagem dentro do slider */
-.slider .slide {
-    width: 100%; /* Imagem ocupa toda a largura do slider */
-    height: 350px; /* Altura padrão para cada slide */
-    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
-    display: none; /* Inicia todas as imagens escondidas */
-}
-
-/* Exibe o slide ativo */
-.slider .active {
-    display: block; /* Mostra apenas a imagem ativa */
+body {
+    background-color: var(--background) !important; /* Fundo escuro global */
+    color: var(--text-light); /* Texto claro */
 }
 
 /* Estilização do cabeçalho da loja */
@@ -40,16 +29,16 @@
     background-color: var(--primary); /* Fundo escuro do cabeçalho */
     color: var(--accent); /* Cor de destaque para o texto */
     text-align: center; /* Centraliza o texto */
-    padding: 1.5rem; /* Espaçamento interno */
-    font-size: 1.8rem; /* Tamanho da fonte do nome da loja */
+    padding: 5rem; /* Espaçamento interno */
     font-weight: bold; /* Texto em negrito */
     letter-spacing: 1px; /* Espaçamento entre letras */
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.8); /* Adiciona sombra com cor do destaque */
 }
 
 /* Logo tipográfica estilizada */
 /* Logo com efeito neon */
 .logo {
-    font-size: 2.2rem; /* Tamanho maior para destacar */
+    font-size: 4rem; /* Tamanho maior para destacar */
     font-weight: 700; /* Negrito forte para dar presença */
     color: var(--accent); /* Cor neon principal */
     text-transform: uppercase; /* Todas letras maiúsculas */
@@ -63,7 +52,53 @@
 
 .slogan {
     color: var(--text-light); /* Cor para o texto */
-    font-size: 0.5rem; /* Tamanho da letra */
+    font-size: 0.7rem; /* Tamanho da letra */
+}
+
+/* Container principal do slider */
+.slider {
+    position: relative;
+    width: 100%; /* Alterado para 100% para ocupar toda a largura disponível */
+    max-width: 900px; /* Aumentado o max-width para permitir imagens maiores */
+    height: 600px; /* Altura ajustada */
+    margin: 20px auto; /* Centraliza o slider */
+    margin-top: 50px;   /* Espaço acima do slider */
+    overflow: hidden; /* Oculta partes fora do container */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: var(--primary); /* Fundo escuro */
+    box-shadow: var(--shadow); /* Adiciona sombra consistente */
+}
+
+/* Conteúdo do slider */
+.slider-content {
+    display: flex; /* Exibe os slides lado a lado */
+    align-items: stretch; /* Garante que os slides ocupem toda a altura */
+    justify-content: center; /* Centraliza horizontalmente */
+    transition: transform 0.5s ease-in-out; /* Animação suave ao trocar de slide */
+    width: 300%; /* Largura total para acomodar todos os slides */
+}
+
+/* Cada slide */
+.slider .slide {
+    flex: 100%; /* Cada slide ocupa 100% da largura do container */
+    height: 100%; /* Preenche a altura do slider */
+    display: none; /* Esconde os slides inicialmente */
+    background-color: var(--primary); /* Fundo escuro para evitar espaços brancos */
+}
+
+/* Slide ativo */
+.slider .slide.active {
+    display: block; /* Exibe apenas o slide ativo */
+}
+
+/* Imagem dentro do slide */
+.slider .slide img {
+    width: 100%; /* Imagem ocupa toda a largura do slide */
+    height: 100%; /* Imagem ocupa toda a altura do slide */
+    object-fit: cover; /* Ajusta a imagem para preencher todo o espaço */
+    object-position: center; /* Centraliza a imagem no container */
+    display: block; /* Garante que a imagem seja exibida */
+    min-width: 100%; /* Garante que a largura mínima seja 100% */
 }
 
 /* Grid de produtos - layout responsivo de cards */
@@ -81,13 +116,14 @@
     border-radius: 12px; /* Borda arredondada */
     padding: 1.5rem; /* Espaçamento interno do card */
     text-align: center; /* Centraliza o conteúdo */
-    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave no hover */
+    transition: var(--transition);
+    will-change: transform; /* Otimiza animações */
 }
 
 /* Animação ao passar o mouse sobre o produto */
 .product:hover {
     transform: translateY(-5px); /* Move levemente para cima */
-    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2); /* Adiciona sombra com cor do destaque */
+    box-shadow: var(--shadow);
 }
 
 /* Container de imagens do produto */
@@ -134,7 +170,6 @@
     margin-top: 10px; /* Espaço acima da descrição */
     font-size: 0.9rem; /* Tamanho da fonte da descrição */
 }
-
 
 /* Oculta o container de detalhes do produto inicialmente */
 .hidden {
@@ -213,11 +248,12 @@
     display: flex; /* Usa flexbox para centralizar o ícone */
     justify-content: center; /* Centraliza o ícone horizontalmente */
     align-items: center; /* Centraliza o ícone verticalmente */
-    box-shadow: 0 6px 12px rgba(0, 255, 136, 0.4); /* Sombra moderna com a cor principal */
+    box-shadow: var(--shadow); /* Sombra moderna com a cor principal */
     cursor: pointer; /* Cursor de mão para indicar que é clicável */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transformação e sombra ao passar o mouse */
+    transition: var(--transition); /* Suaviza a transformação e sombra ao passar o mouse */
     text-decoration: none; /* Remove o sublinhado do link */
     color: inherit; /* Mantém a cor do ícone */
+    will-change: transform; /* Otimiza animações */
 }
 
 /* Efeito ao passar o mouse no botão do WhatsApp */
@@ -272,12 +308,26 @@ footer p {
   /* Responsividade para telas menores que 600px */
   @media (max-width: 600px) {
     .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta o número de produtos por linha no celular */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px; /* Reduz o gap em telas menores */
+        padding: 1rem; /* Reduz o padding em telas menores */
     }
+    
     .slider {
-        height: 200px; /* Reduz altura do slider em dispositivos móveis */
+        height: 250px;
+        width: 95%; /* Aumenta a largura em telas menores */
     }
+    
     .slider .slide {
-        height: 200px; /* Reduz altura de cada imagem do slider */
+        height: 200px;
     }
-}  
+    
+    .slider .slide img {
+        object-fit: contain;
+    }
+    
+    .whatsapp-icon {
+        width: 35px; /* Reduz o tamanho em telas menores */
+        height: 35px;
+    }
+}

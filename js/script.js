@@ -1,15 +1,15 @@
 // Slider automático
-let slideIndex = 0;
-const slides = document.querySelectorAll('.slider .slide');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
 
-function showSlides() {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex - 1].classList.add('active');
-  setTimeout(showSlides, 3000); // Muda a cada 3 segundos
+function showNextSlide() {
+  slides[currentIndex].classList.remove('active'); // Remove a classe ativa do slide atual
+  currentIndex = (currentIndex + 1) % slides.length; // Vai para o próximo slide
+  slides[currentIndex].classList.add('active'); // Adiciona a classe ativa ao próximo slide
 }
-showSlides();
+
+// Troca de slide a cada 5 segundos
+setInterval(showNextSlide, 5000);
 
 // Zoom ao clicar
 function zoomImage(img) {
