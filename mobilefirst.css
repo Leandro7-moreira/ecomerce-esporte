@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #eeeeee;
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #00ff88;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+}
+
+.slogan {
+    font-size: 1rem;
+    color: #999999;
+    margin-top: 0.5rem;
+}
+
+/* Slider */
+.slider {
+    margin: 1rem 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Grid de produtos */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.product {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    color: #00ff88;
+    margin-bottom: 0.5rem;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #999999;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+    color: #999999;
+}
+
+/* Media Queries */
+
+/* Tablets (481px a 768px) */
+@media (min-width: 481px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .slogan {
+        font-size: 1.1rem;
+    }
+}
+
+/* Laptops (769px a 1024px) */
+@media (min-width: 769px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .logo {
+        font-size: 3rem;
+    }
+
+    .slogan {
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktops e telas grandes (1025px a 1200px) */
+@media (min-width: 1025px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .logo {
+        font-size: 3.5rem;
+    }
+
+    .slogan {
+        font-size: 1.3rem;
+    }
+}
+
+/* Telas muito grandes (acima de 1200px) */
+@media (min-width: 1201px) {
+    .products-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .logo {
+        font-size: 4rem;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+    }
+}
