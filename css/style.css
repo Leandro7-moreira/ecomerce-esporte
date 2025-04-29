@@ -80,15 +80,18 @@ body {
 
 /* Cada slide */
 .slider .slide {
-    flex: 100%; /* Cada slide ocupa 100% da largura do container */
+    flex: 0 0 100%; /* Cada slide ocupa 100% da largura do container */
     height: 100%; /* Preenche a altura do slider */
     display: none; /* Esconde os slides inicialmente */
     background-color: var(--primary); /* Fundo escuro para evitar espaços brancos */
+    overflow: hidden; /* Garante que não haja scroll ou corte estranho */
 }
 
 /* Slide ativo */
 .slider .slide.active {
-    display: block; /* Exibe apenas o slide ativo */
+    display: flex; /* Flex para garantir alinhamento */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 /* Imagem dentro do slide */
@@ -99,6 +102,7 @@ body {
     object-position: center; /* Centraliza a imagem no container */
     display: block; /* Garante que a imagem seja exibida */
     min-width: 100%; /* Garante que a largura mínima seja 100% */
+    border-radius: 10px; /* Mantém o estilo do container */
 }
 
 /* Grid de produtos - layout responsivo de cards */
@@ -108,16 +112,22 @@ body {
     gap: 30px; /* Espaçamento entre produtos */
     padding: 2rem; /* Espaçamento interno */
     background-color: var(--background); /* Fundo escuro para a seção de produtos */
+    max-width: 1500px; /* Limita a largura total do container */
+    margin: 0 auto; /* Centraliza o container na tela */
 }
 
 /* Estilo individual de cada produto */
 .product {
-    background-color: var(--primary); /* Fundo dos cards de produto */
-    border-radius: 12px; /* Borda arredondada */
-    padding: 1.5rem; /* Espaçamento interno do card */
-    text-align: center; /* Centraliza o conteúdo */
+    background-color: var(--primary); /* Fundo escuro */
+    border-radius: 12px; /* Arredondamento */
+    padding: 1rem; /* Espaço interno */
+    text-align: center; /* Centraliza conteúdo */
     transition: var(--transition);
-    will-change: transform; /* Otimiza animações */
+    will-change: transform;
+    height: 100%; /* Garante altura consistente no grid */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui conteúdo verticalmente */
 }
 
 /* Animação ao passar o mouse sobre o produto */
@@ -134,9 +144,10 @@ body {
 /* Imagem principal do produto */
 .product-images img.main-img {
     width: 100%; /* Imagem principal ocupa 100% do card */
-    height: auto; /* Mantém a proporção da imagem */
+    height: 500px; /* Altura fixa para todas as imagens */
+    object-fit: contain; /* Mantém proporção original, ajustando ao espaço */
     cursor: pointer; /* Indica que a imagem é clicável (para zoom) */
-    border-radius: 10px; /* Arredondamento da imagem */
+   
 }
 
 /* Miniaturas abaixo da imagem principal */
