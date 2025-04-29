@@ -342,3 +342,138 @@ footer p {
         height: 35px;
     }
 }
+
+/* Dispositivos móveis (480px ou menos) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .header {
+        padding: 3rem; /* Reduz o espaçamento interno */
+        font-size: 1.5rem; /* Ajusta o tamanho do texto */
+    }
+
+    .slider {
+        height: 200px; /* Reduz a altura do slider */
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* Apenas 1 produto por linha */
+        gap: 10px; /* Reduz o espaçamento entre os produtos */
+    }
+
+    .whatsapp-icon {
+        width: 30px; /* Reduz o tamanho do botão */
+        height: 30px;
+    }
+}
+
+/* Tablets (481px a 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Fonte um pouco maior */
+    }
+
+    .header {
+        padding: 4rem; /* Ajusta o espaçamento interno */
+        font-size: 2rem; /* Ajusta o tamanho do texto */
+    }
+
+    .slider {
+        height: 300px; /* Ajusta a altura do slider */
+        width: 90%; /* Ocupa 90% da largura */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha */
+        gap: 20px; /* Espaçamento moderado entre os produtos */
+    }
+
+    .whatsapp-icon {
+        width: 35px; /* Ajusta o tamanho do botão */
+        height: 35px;
+    }
+}
+
+/* Laptops (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px; /* Fonte maior para laptops */
+    }
+
+    .header {
+        padding: 5rem; /* Mantém o espaçamento interno */
+        font-size: 2.5rem; /* Ajusta o tamanho do texto */
+    }
+
+    .slider {
+        height: 400px; /* Ajusta a altura do slider */
+        width: 80%; /* Ocupa 80% da largura */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 produtos por linha */
+        gap: 25px; /* Espaçamento maior entre os produtos */
+    }
+
+    .whatsapp-icon {
+        width: 40px; /* Tamanho padrão do botão */
+        height: 40px;
+    }
+}
+
+/* Desktops e telas grandes (1025px a 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    body {
+        font-size: 20px; /* Fonte maior para desktops */
+    }
+
+    .header {
+        padding: 6rem; /* Espaçamento interno maior */
+        font-size: 3rem; /* Texto maior */
+    }
+
+    .slider {
+        height: 500px; /* Altura maior para o slider */
+        width: 70%; /* Ocupa 70% da largura */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 produtos por linha */
+        gap: 30px; /* Espaçamento maior entre os produtos */
+    }
+
+    .whatsapp-icon {
+        width: 45px; /* Botão ligeiramente maior */
+        height: 45px;
+    }
+}
+
+/* Telas muito grandes (acima de 1200px) */
+@media (min-width: 1201px) {
+    body {
+        font-size: 22px; /* Fonte ainda maior */
+    }
+
+    .header {
+        padding: 7rem; /* Espaçamento interno maior */
+        font-size: 3.5rem; /* Texto ainda maior */
+    }
+
+    .slider {
+        height: 600px; /* Altura máxima para o slider */
+        width: 60%; /* Ocupa 60% da largura */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(5, 1fr); /* 5 produtos por linha */
+        gap: 35px; /* Espaçamento amplo entre os produtos */
+    }
+
+    .whatsapp-icon {
+        width: 50px; /* Botão maior */
+        height: 50px;
+    }
+}
