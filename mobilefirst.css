@@ -28,42 +28,59 @@
     line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
 }
 
-/* Grid de itens do produto - Layout responsivo para exibir os produtos */
-.product-items {
-    display: grid; /* Usa grid para layout flexível */
-    grid-template-columns: 1fr; /* Uma coluna por padrão (mobile first) */
-    gap: 2rem; /* Espaçamento entre os itens */
-    margin-top: 2rem; /* Espaço acima do grid */
+/* Estilos base para o grid de produtos - Mobile First */
+.products-grid {
+    display: grid; /* Layout em grid para organização dos produtos */
+    grid-template-columns: 1fr; /* Uma coluna para mobile */
+    gap: 20px; /* Espaçamento entre os cards */
+    padding: 20px; /* Espaçamento interno do grid */
+    margin: 0 auto; /* Centraliza o grid */
+    max-width: 1500px; /* Largura máxima para controle */
 }
 
-/* Card individual do produto - Estilo para cada item do grid */
-.product-item {
-    background-color: #1f1f1f; /* Fundo escuro para contraste */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 1.5rem; /* Espaçamento interno */
-    text-align: center; /* Centraliza o conteúdo */
-    transition: transform 0.3s ease; /* Animação suave ao interagir */
+/* Estilo do card do produto */
+.product {
+    background-color: var(--primary); /* Cor de fundo do card */
+    border-radius: 12px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno do card */
+    text-align: center; /* Centraliza o texto */
+    transition: transform 0.3s ease; /* Transição suave para efeito hover */
+    display: flex; /* Layout flexível para organizar conteúdo */
+    flex-direction: column; /* Direção da coluna para empilhar elementos */
+    justify-content: space-between; /* Espaça os elementos dentro do card */
+    height: 100%; /* Garante que o card ocupe toda a altura disponível */
 }
 
-/* Efeito hover no card do produto - Interatividade visual */
-.product-item:hover {
-    transform: translateY(-5px); /* Move levemente para cima ao passar o mouse */
+.product:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: var(--shadow); /* Sombra para destaque */
 }
 
-/* Imagem do produto - Estilo para as imagens dos produtos */
-.product-item img {
-    width: 100%; /* Largura responsiva */
-    max-width: 300px; /* Largura máxima para controle */
-    height: auto; /* Altura automática para manter proporção */
-    border-radius: 10px; /* Bordas arredondadas */
-    margin-bottom: 1rem; /* Espaço abaixo da imagem */
+/* Imagem do produto */
+.product-images {
+    position: relative; /* Necessário para posicionamento absoluto dos elementos internos */
+    margin-bottom: 15px; /* Espaço abaixo da imagem */
 }
 
-/* Texto do produto - Estilo para informações adicionais */
-.product-item p {
-    color: #bbbbbb; /* Cor cinza claro para legibilidade */
-    margin-bottom: 1rem; /* Espaço abaixo do texto */
-    font-size: 1rem; /* Tamanho padrão para leitura */
+.product-images img.main-img {
+    width: 100%; /* Largura total do card */
+    height: 300px; /* Altura padrão para mobile */
+    object-fit: contain; /* Mantém a proporção da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Título do produto */
+.product h2 {
+    color: var(--text-light); /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
+    margin: 10px 0; /* Espaço acima e abaixo do título */   
+}
+
+/* Descrição do produto */
+.product p {
+    color: var(--text-dark); /* Cor do texto */
+    font-size: 0.9rem; /* Tamanho do texto */
+    margin-bottom: 15px; /* Espaço abaixo da descrição */
 }
 
 /* Botão do WhatsApp - Estilo para o botão de contato */
@@ -140,10 +157,16 @@
         height: 300px; /* Aumenta a altura do slider */
         width: 90%; /* Aumenta a largura do slider */
     }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para tablets */
+        gap: 25px; /* Espaçamento entre os cards */
+        padding: 25px; /* Espaçamento interno do grid */
+    }
 }
 
 /* Laptops (769px ou mais) */
-@media (min-width: 769px) { 
+@media (min-width: 769px) {
     .logo {
         font-size: 2.2rem; /* Aumenta o tamanho da fonte para laptops */
         letter-spacing: 1.2px; /* Ajusta o espaçamento entre letras */
@@ -157,6 +180,20 @@
     .slider {
         height: 350px; /* Aumenta a altura do slider */
         width: 85%; /* Aumenta a largura do slider */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas para laptops */
+        gap: 30px; /* Espaçamento entre os cards */
+        padding: 30px; /* Espaçamento interno do grid */
+    }
+
+    .product {
+        padding: 25px; /* Aumenta o espaçamento interno do card */
+    }
+
+    .product-images img.main-img {
+        height: 350px; /* Aumenta a altura da imagem do produto */
     }
 }
 
@@ -175,6 +212,19 @@
         height: 400px; /* Aumenta a altura do slider */
         width: 80%; /* Aumenta a largura do slider */
     }
+
+    .products-grid {
+        gap: 35px; /* Espaçamento entre os cards */
+        padding: 35px; /* Espaçamento interno do grid */
+    }
+
+    .product {
+        padding: 30px; /* Aumenta o espaçamento interno do card */
+    }
+
+    .product-images img.main-img {
+        height: 400px; /* Aumenta a altura da imagem do produto */
+    }
 }
 
 /* Telas grandes (1201px ou mais) */
@@ -186,5 +236,14 @@
     .slider {
         height: 450px; /* Aumenta a altura do slider */
         width: 75%; /* Aumenta a largura do slider */
+    }
+
+    .products-grid {
+        gap: 40px; /* Espaçamento entre os cards */
+        padding: 40px; /* Espaçamento interno do grid */
+    }
+
+    .product-images img.main-img {
+        height: 450px; /* Aumenta a altura da imagem do produto */
     }
 }
