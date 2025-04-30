@@ -1,150 +1,128 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Estilos para detalhes do produto - Container principal que controla a visibilidade dos detalhes */
+#product-details {
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease; /* Transição suave para aparecer/desaparecer */
+    padding: 2rem 1rem; /* Espaçamento interno responsivo */
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #121212;
-    color: #eeeeee;
-    line-height: 1.5;
-    padding: 0 1rem;
+/* Container para organizar os detalhes do produto */
+.product-details {
+    max-width: 1200px; /* Largura máxima para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o container */
 }
 
-/* Cabeçalho */
-.header {
-    text-align: center;
-    padding: 2rem 0;
+/* Título do produto - Estilo para destacar o nome do produto */
+.product-details h2 {
+    color: #00ff88; /* Cor neon verde para destaque */
+    font-size: 2rem; /* Tamanho grande para visibilidade */
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+    text-align: center; /* Centraliza o texto */
 }
 
-.logo {
-    font-size: 2rem;
-    color: #00ff88;
-    text-transform: uppercase;
-    text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;
+/* Descrição do produto - Estilo para o texto descritivo */
+.product-description {
+    color: #bbbbbb; /* Cor cinza claro para melhor legibilidade */
+    font-size: 1.1rem; /* Tamanho confortável para leitura */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 2rem; /* Espaço abaixo da descrição */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
 }
 
-.slogan {
-    font-size: 1rem;
-    color: #999999;
-    margin-top: 0.5rem;
+/* Grid de itens do produto - Layout responsivo para exibir os produtos */
+.product-items {
+    display: grid; /* Usa grid para layout flexível */
+    grid-template-columns: 1fr; /* Uma coluna por padrão (mobile first) */
+    gap: 2rem; /* Espaçamento entre os itens */
+    margin-top: 2rem; /* Espaço acima do grid */
 }
 
-/* Slider */
-.slider {
-    margin: 1rem 0;
-    overflow: hidden;
-    border-radius: 10px;
+/* Card individual do produto - Estilo para cada item do grid */
+.product-item {
+    background-color: #1f1f1f; /* Fundo escuro para contraste */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 1.5rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    transition: transform 0.3s ease; /* Animação suave ao interagir */
 }
 
-.slider img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+/* Efeito hover no card do produto - Interatividade visual */
+.product-item:hover {
+    transform: translateY(-5px); /* Move levemente para cima ao passar o mouse */
 }
 
-/* Grid de produtos */
-.products-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1rem 0;
+/* Imagem do produto - Estilo para as imagens dos produtos */
+.product-item img {
+    width: 100%; /* Largura responsiva */
+    max-width: 300px; /* Largura máxima para controle */
+    height: auto; /* Altura automática para manter proporção */
+    border-radius: 10px; /* Bordas arredondadas */
+    margin-bottom: 1rem; /* Espaço abaixo da imagem */
 }
 
-.product {
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
+/* Texto do produto - Estilo para informações adicionais */
+.product-item p {
+    color: #bbbbbb; /* Cor cinza claro para legibilidade */
+    margin-bottom: 1rem; /* Espaço abaixo do texto */
+    font-size: 1rem; /* Tamanho padrão para leitura */
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
+/* Botão do WhatsApp - Estilo para o botão de contato */
+.whatsapp-button {
+    display: inline-flex; /* Layout flexível para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 0.5rem; /* Espaço entre ícone e texto */
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    color: white; /* Texto branco para contraste */
+    padding: 0.8rem 1.5rem; /* Espaçamento interno confortável */
+    border-radius: 5px; /* Bordas levemente arredondadas */
+    text-decoration: none; /* Remove sublinhado do link */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Cursor pointer para indicar clicável */
+    font-size: 1rem; /* Tamanho padrão do texto */
+    transition: background-color 0.3s ease; /* Transição suave da cor */
 }
 
-.product h2 {
-    font-size: 1.2rem;
-    color: #00ff88;
-    margin-bottom: 0.5rem;
+/* Efeito hover no botão do WhatsApp - Interatividade visual */
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Cor mais escura ao passar o mouse */
 }
 
-.product p {
-    font-size: 0.9rem;
-    color: #999999;
-}
+/* Media Queries - Responsividade para diferentes tamanhos de tela */
 
-/* Rodapé */
-.footer {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.8rem;
-    color: #999999;
-}
-
-/* Media Queries */
-
-/* Tablets (481px a 768px) */
+/* Tablets (481px ou mais) */
 @media (min-width: 481px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .logo {
-        font-size: 2.5rem;
-    }
-
-    .slogan {
-        font-size: 1.1rem;
+    .product-items {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
     }
 }
 
-/* Laptops (769px a 1024px) */
+/* Laptops (769px ou mais) */
 @media (min-width: 769px) {
-    .products-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .product-items {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas em laptops */
     }
-
-    .logo {
-        font-size: 3rem;
+    
+    .product-details h2 {
+        font-size: 2.5rem; /* Título maior em telas maiores */
     }
-
-    .slogan {
-        font-size: 1.2rem;
+    
+    .product-description {
+        font-size: 1.2rem; /* Texto maior em telas maiores */
     }
 }
 
-/* Desktops e telas grandes (1025px a 1200px) */
+/* Desktops (1025px ou mais) */
 @media (min-width: 1025px) {
-    .products-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .product-items {
+        grid-template-columns: repeat(3, 1fr); /* Mantém três colunas */
     }
-
-    .logo {
-        font-size: 3.5rem;
+    
+    .product-details h2 {
+        font-size: 3rem; /* Título ainda maior */
     }
-
-    .slogan {
-        font-size: 1.3rem;
-    }
-}
-
-/* Telas muito grandes (acima de 1200px) */
-@media (min-width: 1201px) {
-    .products-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .logo {
-        font-size: 4rem;
-    }
-
-    .slogan {
-        font-size: 1.5rem;
+    
+    .product-description {
+        font-size: 1.3rem; /* Texto ainda maior */
     }
 }

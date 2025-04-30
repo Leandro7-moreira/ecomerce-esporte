@@ -1,8 +1,8 @@
 /* Reset básico para remover margens e paddings padrões e definir fonte global */
 * {
-    margin: 0;
+    margin: 0; 
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased; /* Melhora a renderização de fontes */
     -moz-osx-font-smoothing: grayscale;
@@ -325,21 +325,21 @@ footer p {
     }
     
     .slider {
-        height: 250px;
+        height: 250px; /* Reduz a altura do slider */
         width: 95%; /* Aumenta a largura em telas menores */
     }
     
     .slider .slide {
-        height: 200px;
+        height: 200px; /* Reduz a altura dos slides */
     }
     
     .slider .slide img {
-        object-fit: contain;
+        object-fit: contain; /* Mantém a proporção da imagem */
     }
     
     .whatsapp-icon {
         width: 35px; /* Reduz o tamanho em telas menores */
-        height: 35px;
+        height: 35px; /* Reduz o tamanho em telas menores */
     }
 }
 
@@ -366,7 +366,7 @@ footer p {
 
     .whatsapp-icon {
         width: 30px; /* Reduz o tamanho do botão */
-        height: 30px;
+        height: 30px; /* Reduz o tamanho do botão */
     }
 }
 
@@ -420,7 +420,7 @@ footer p {
 
     .whatsapp-icon {
         width: 40px; /* Tamanho padrão do botão */
-        height: 40px;
+        height: 40px; /* Tamanho padrão do botão */
     }
 }
 
@@ -447,7 +447,7 @@ footer p {
 
     .whatsapp-icon {
         width: 45px; /* Botão ligeiramente maior */
-        height: 45px;
+        height: 45px; /* Botão ligeiramente maior */
     }
 }
 
@@ -474,6 +474,6 @@ footer p {
 
     .whatsapp-icon {
         width: 50px; /* Botão maior */
-        height: 50px;
+        height: 50px; /* Botão maior */
     }
 }
