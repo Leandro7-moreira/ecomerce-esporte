@@ -1,249 +1,168 @@
-/* Estilos para detalhes do produto - Container principal que controla a visibilidade dos detalhes */
-#product-details {
-    opacity: 0; /* Inicialmente invisível */
-    transition: opacity 0.3s ease; /* Transição suave para aparecer/desaparecer */
-    padding: 2rem 1rem; /* Espaçamento interno responsivo */
-}
+/* Media Queries para Responsividade - Arquivo dedicado apenas para ajustes de layout em diferentes tamanhos de tela */
 
-/* Container para organizar os detalhes do produto */
-.product-details {
-    max-width: 1200px; /* Largura máxima para melhor legibilidade */
-    margin: 0 auto; /* Centraliza o container */
-}
-
-/* Título do produto - Estilo para destacar o nome do produto */
-.product-details h2 {
-    color: #00ff88; /* Cor neon verde para destaque */
-    font-size: 2rem; /* Tamanho grande para visibilidade */
-    margin-bottom: 1rem; /* Espaço abaixo do título */
-    text-align: center; /* Centraliza o texto */
-}
-
-/* Descrição do produto - Estilo para o texto descritivo */
-.product-description {
-    color: #bbbbbb; /* Cor cinza claro para melhor legibilidade */
-    font-size: 1.1rem; /* Tamanho confortável para leitura */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 2rem; /* Espaço abaixo da descrição */
-    line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
-}
-
-/* Estilos base para o grid de produtos - Mobile First */
-.products-grid {
-    display: grid; /* Layout em grid para organização dos produtos */
-    grid-template-columns: 1fr; /* Uma coluna para mobile */
-    gap: 20px; /* Espaçamento entre os cards */
-    padding: 20px; /* Espaçamento interno do grid */
-    margin: 0 auto; /* Centraliza o grid */
-    max-width: 1500px; /* Largura máxima para controle */
-}
-
-/* Estilo do card do produto */
-.product {
-    background-color: var(--primary); /* Cor de fundo do card */
-    border-radius: 12px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno do card */
-    text-align: center; /* Centraliza o texto */
-    transition: transform 0.3s ease; /* Transição suave para efeito hover */
-    display: flex; /* Layout flexível para organizar conteúdo */
-    flex-direction: column; /* Direção da coluna para empilhar elementos */
-    justify-content: space-between; /* Espaça os elementos dentro do card */
-    height: 100%; /* Garante que o card ocupe toda a altura disponível */
-}
-
-.product:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-    box-shadow: var(--shadow); /* Sombra para destaque */
-}
-
-/* Imagem do produto */
-.product-images {
-    position: relative; /* Necessário para posicionamento absoluto dos elementos internos */
-    margin-bottom: 15px; /* Espaço abaixo da imagem */
-}
-
-.product-images img.main-img {
-    width: 100%; /* Largura total do card */
-    height: 300px; /* Altura padrão para mobile */
-    object-fit: contain; /* Mantém a proporção da imagem */
-    border-radius: 8px; /* Bordas arredondadas */
-}
-
-/* Título do produto */
-.product h2 {
-    color: var(--text-light); /* Cor do texto */
-    font-size: 1.2rem; /* Tamanho do texto */
-    margin: 10px 0; /* Espaço acima e abaixo do título */   
-}
-
-/* Descrição do produto */
-.product p {
-    color: var(--text-dark); /* Cor do texto */
-    font-size: 0.9rem; /* Tamanho do texto */
-    margin-bottom: 15px; /* Espaço abaixo da descrição */
-}
-
-/* Botão do WhatsApp - Estilo para o botão de contato */
-.whatsapp-button {
-    display: inline-flex; /* Layout flexível para alinhar ícone e texto */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 0.5rem; /* Espaço entre ícone e texto */
-    background-color: #25D366; /* Cor verde do WhatsApp */
-    color: white; /* Texto branco para contraste */
-    padding: 0.8rem 1.5rem; /* Espaçamento interno confortável */
-    border-radius: 5px; /* Bordas levemente arredondadas */
-    text-decoration: none; /* Remove sublinhado do link */
-    border: none; /* Remove borda padrão */
-    cursor: pointer; /* Cursor pointer para indicar clicável */
-    font-size: 1rem; /* Tamanho padrão do texto */
-    transition: background-color 0.3s ease; /* Transição suave da cor */
-}
-
-/* Efeito hover no botão do WhatsApp - Interatividade visual */
-.whatsapp-button:hover {
-    background-color: #128C7E; /* Cor mais escura ao passar o mouse */
-}
-
-/* Estilos base - Mobile First */
-.logo {
-    font-size: 1.8rem; /* Tamanho base para mobile */
-    font-weight: 700; /* Peso da fonte para destaque */
-    color: var(--accent); /* Cor do texto */
-    text-transform: uppercase; /* Transforma texto em maiúsculas */
-    letter-spacing: 1px; /* Espaçamento entre letras */
-    text-align: center; /* Centraliza o texto */
-    text-shadow: 
-        0 0 5px var(--accent),  /* Sombra para destaque */
-        0 0 10px var(--accent), /* Sombra para destaque */
-        0 0 20px var(--accent); /* Sombra para destaque */
-}
-
-.slogan {
-    color: var(--text-light); /* Cor do texto */
-    font-size: 0.7rem; /* Tamanho base para mobile */
-    margin-top: 0.3rem; /* Espaço acima do slogan */
-    line-height: 1.2; /* Espaçamento entre linhas */
-}
-
-.slider {
-    position: relative; /* Necessário para o posicionamento absoluto dos slides */
-    width: 95%; /* Largura base para mobile */
-    max-width: 900px; /* Largura máxima para controle */
-    height: 200px; /* Altura base para mobile */
-    margin: 10px auto; /* Centraliza o slider */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
-    border-radius: 10px; /* Bordas arredondadas */
-    background-color: var(--primary); /* Cor de fundo do slider */
-    box-shadow: var(--shadow); /* Sombra para destaque */
-}
-
-.slider .slide img {
-    object-fit: contain; /* Mantém proporção da imagem */
-}
-
-/* Tablets (481px ou mais) */
+/* Tablets (481px a 768px) - Ajustes para dispositivos com tela média */
 @media (min-width: 481px) {
+    body {
+        font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade em tablets */
+    }
+
+    .header {
+        padding: 3rem; /* Aumenta o espaçamento interno do cabeçalho */
+    }
+
     .logo {
-        font-size: 2rem; /* Aumenta o tamanho da fonte para tablets */
-    }
-
-    .slogan {
-        font-size: 0.8rem; /* Aumenta o tamanho da fonte do slogan */
-        margin-top: 0.4rem; /* Aumenta o espaço acima do slogan */
-    }
-
-    .slider {
-        height: 300px; /* Aumenta a altura do slider */
-        width: 90%; /* Aumenta a largura do slider */
-    }
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas para tablets */
-        gap: 25px; /* Espaçamento entre os cards */
-        padding: 25px; /* Espaçamento interno do grid */
-    }
-}
-
-/* Laptops (769px ou mais) */
-@media (min-width: 769px) {
-    .logo {
-        font-size: 2.2rem; /* Aumenta o tamanho da fonte para laptops */
+        font-size: 2rem; /* Aumenta o tamanho da logo */
         letter-spacing: 1.2px; /* Ajusta o espaçamento entre letras */
     }
 
     .slogan {
-        font-size: 0.85rem; /* Aumenta o tamanho da fonte do slogan */
-        margin-top: 0.5rem; /* Aumenta o espaço acima do slogan */
+        font-size: 0.8rem; /* Aumenta o tamanho do slogan */
+        margin-top: 0.4rem; /* Ajusta o espaçamento superior */
+    }
+
+    .slider {
+        height: 300px; /* Aumenta a altura do slider */
+        width: 90%; /* Reduz a largura para melhor proporção */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para melhor aproveitamento do espaço */
+        gap: 20px; /* Aumenta o espaçamento entre os produtos */
+        padding: 20px; /* Aumenta o padding interno */
+    }
+
+    .product {
+        padding: 20px; /* Aumenta o espaçamento interno dos cards */
+    }
+
+    .product-images img.main-img {
+        height: 300px; /* Aumenta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 35px; /* Aumenta o tamanho do ícone do WhatsApp */
+        height: 35px;
+    }
+}
+
+/* Laptops (769px a 1024px) - Ajustes para telas de laptop */
+@media (min-width: 769px) {
+    body {
+        font-size: 18px; /* Aumenta ainda mais o tamanho da fonte */
+    }
+
+    .header {
+        padding: 4rem; /* Aumenta o espaçamento do cabeçalho */
+    }
+
+    .logo {
+        font-size: 2.2rem; /* Aumenta o tamanho da logo */
+        letter-spacing: 1.2px; /* Mantém o espaçamento entre letras */
+    }
+
+    .slogan {
+        font-size: 0.85rem; /* Ajusta o tamanho do slogan */
+        margin-top: 0.5rem; /* Aumenta o espaçamento superior */
     }
 
     .slider {
         height: 350px; /* Aumenta a altura do slider */
-        width: 85%; /* Aumenta a largura do slider */
+        width: 85%; /* Reduz a largura para melhor proporção */
     }
 
     .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* Três colunas para laptops */
-        gap: 30px; /* Espaçamento entre os cards */
-        padding: 30px; /* Espaçamento interno do grid */
+        grid-template-columns: repeat(3, 1fr); /* Três colunas para melhor aproveitamento do espaço */
+        gap: 25px; /* Aumenta o espaçamento entre os produtos */
+        padding: 25px; /* Aumenta o padding interno */
     }
 
     .product {
-        padding: 25px; /* Aumenta o espaçamento interno do card */
+        padding: 25px; /* Aumenta o espaçamento interno dos cards */
     }
 
     .product-images img.main-img {
-        height: 350px; /* Aumenta a altura da imagem do produto */
+        height: 350px; /* Aumenta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 40px; /* Aumenta o tamanho do ícone do WhatsApp */
+        height: 40px;
     }
 }
 
-/* Desktops (1025px ou mais) */
+/* Desktops (1025px a 1200px) - Ajustes para monitores de desktop */
 @media (min-width: 1025px) {
+    body {
+        font-size: 20px; /* Aumenta o tamanho da fonte para telas maiores */
+    }
+
+    .header {
+        padding: 5rem; /* Aumenta o espaçamento do cabeçalho */
+    }
+
     .logo {
-        font-size: 2.5rem; /* Aumenta o tamanho da fonte para desktops */
-        letter-spacing: 1.5px; /* Ajusta o espaçamento entre letras */
+        font-size: 2.5rem; /* Aumenta o tamanho da logo */
+        letter-spacing: 1.5px; /* Aumenta o espaçamento entre letras */
     }
 
     .slogan {
-        font-size: 0.9rem; /* Aumenta o tamanho da fonte do slogan */
+        font-size: 0.9rem; /* Ajusta o tamanho do slogan */
     }
 
     .slider {
         height: 400px; /* Aumenta a altura do slider */
-        width: 80%; /* Aumenta a largura do slider */
+        width: 80%; /* Reduz a largura para melhor proporção */
     }
 
     .products-grid {
-        gap: 35px; /* Espaçamento entre os cards */
-        padding: 35px; /* Espaçamento interno do grid */
+        gap: 30px; /* Aumenta o espaçamento entre os produtos */
+        padding: 30px; /* Aumenta o padding interno */
     }
 
     .product {
-        padding: 30px; /* Aumenta o espaçamento interno do card */
+        padding: 30px; /* Aumenta o espaçamento interno dos cards */
     }
 
     .product-images img.main-img {
-        height: 400px; /* Aumenta a altura da imagem do produto */
+        height: 400px; /* Aumenta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 45px; /* Aumenta o tamanho do ícone do WhatsApp */
+        height: 45px; /* Aumenta o tamanho do ícone do WhatsApp */
     }
 }
 
-/* Telas grandes (1201px ou mais) */
+/* Telas grandes (acima de 1200px) - Ajustes para monitores grandes e TVs */
 @media (min-width: 1201px) {
+    body {
+        font-size: 22px; /* Aumenta o tamanho da fonte para telas muito grandes */
+    }
+
+    .header {
+        padding: 6rem; /* Aumenta o espaçamento do cabeçalho */
+    }
+
     .logo {
-        font-size: 2.8rem; /* Aumenta o tamanho da fonte para telas grandes */
+        font-size: 2.8rem; /* Aumenta o tamanho da logo */
     }
 
     .slider {
         height: 450px; /* Aumenta a altura do slider */
-        width: 75%; /* Aumenta a largura do slider */
+        width: 75%; /* Reduz a largura para melhor proporção */
     }
 
     .products-grid {
-        gap: 40px; /* Espaçamento entre os cards */
-        padding: 40px; /* Espaçamento interno do grid */
+        gap: 35px; /* Aumenta o espaçamento entre os produtos */
+        padding: 35px; /* Aumenta o padding interno */
     }
 
     .product-images img.main-img {
-        height: 450px; /* Aumenta a altura da imagem do produto */
+        height: 450px; /* Aumenta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 50px; /* Aumenta o tamanho do ícone do WhatsApp */
+        height: 50px; /* Aumenta o tamanho do ícone do WhatsApp */
     }
 }
