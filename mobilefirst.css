@@ -95,6 +95,24 @@
     .product-items {
         grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
     }
+
+    .logo {
+        font-size: 2rem; /* Reduz o tamanho da logo no mobile */
+        text-align: center;
+    }
+
+    .slogan {
+        font-size: 0.85rem; /* Reduz o tamanho do slogan */
+        line-height: 1.2;
+    }
+
+    .slider {
+        height: 240px; /* Diminui a altura do slider no mobile */
+    }
+
+    .slider .slide img {
+        object-fit: contain; /* Evita que a imagem corte no slider */
+    }
 }
 
 /* Laptops (769px ou mais) */
