@@ -88,59 +88,103 @@
     background-color: #128C7E; /* Cor mais escura ao passar o mouse */
 }
 
-/* Media Queries - Responsividade para diferentes tamanhos de tela */
+/* Estilos base - Mobile First */
+.logo {
+    font-size: 1.8rem; /* Tamanho base para mobile */
+    font-weight: 700; /* Peso da fonte para destaque */
+    color: var(--accent); /* Cor do texto */
+    text-transform: uppercase; /* Transforma texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    text-align: center; /* Centraliza o texto */
+    text-shadow: 
+        0 0 5px var(--accent),  /* Sombra para destaque */
+        0 0 10px var(--accent), /* Sombra para destaque */
+        0 0 20px var(--accent); /* Sombra para destaque */
+}
+
+.slogan {
+    color: var(--text-light); /* Cor do texto */
+    font-size: 0.7rem; /* Tamanho base para mobile */
+    margin-top: 0.3rem; /* Espaço acima do slogan */
+    line-height: 1.2; /* Espaçamento entre linhas */
+}
+
+.slider {
+    position: relative; /* Necessário para o posicionamento absoluto dos slides */
+    width: 95%; /* Largura base para mobile */
+    max-width: 900px; /* Largura máxima para controle */
+    height: 200px; /* Altura base para mobile */
+    margin: 10px auto; /* Centraliza o slider */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa o container */
+    border-radius: 10px; /* Bordas arredondadas */
+    background-color: var(--primary); /* Cor de fundo do slider */
+    box-shadow: var(--shadow); /* Sombra para destaque */
+}
+
+.slider .slide img {
+    object-fit: contain; /* Mantém proporção da imagem */
+}
 
 /* Tablets (481px ou mais) */
 @media (min-width: 481px) {
-    .product-items {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
-    }
-
     .logo {
-        font-size: 2rem; /* Reduz o tamanho da logo no mobile */
-        text-align: center;
+        font-size: 2rem; /* Aumenta o tamanho da fonte para tablets */
     }
 
     .slogan {
-        font-size: 0.85rem; /* Reduz o tamanho do slogan */
-        line-height: 1.2;
+        font-size: 0.8rem; /* Aumenta o tamanho da fonte do slogan */
+        margin-top: 0.4rem; /* Aumenta o espaço acima do slogan */
     }
 
     .slider {
-        height: 240px; /* Diminui a altura do slider no mobile */
-    }
-
-    .slider .slide img {
-        object-fit: contain; /* Evita que a imagem corte no slider */
+        height: 300px; /* Aumenta a altura do slider */
+        width: 90%; /* Aumenta a largura do slider */
     }
 }
 
 /* Laptops (769px ou mais) */
-@media (min-width: 769px) {
-    .product-items {
-        grid-template-columns: repeat(3, 1fr); /* Três colunas em laptops */
+@media (min-width: 769px) { 
+    .logo {
+        font-size: 2.2rem; /* Aumenta o tamanho da fonte para laptops */
+        letter-spacing: 1.2px; /* Ajusta o espaçamento entre letras */
     }
-    
-    .product-details h2 {
-        font-size: 2.5rem; /* Título maior em telas maiores */
+
+    .slogan {
+        font-size: 0.85rem; /* Aumenta o tamanho da fonte do slogan */
+        margin-top: 0.5rem; /* Aumenta o espaço acima do slogan */
     }
-    
-    .product-description {
-        font-size: 1.2rem; /* Texto maior em telas maiores */
+
+    .slider {
+        height: 350px; /* Aumenta a altura do slider */
+        width: 85%; /* Aumenta a largura do slider */
     }
 }
 
 /* Desktops (1025px ou mais) */
 @media (min-width: 1025px) {
-    .product-items {
-        grid-template-columns: repeat(3, 1fr); /* Mantém três colunas */
+    .logo {
+        font-size: 2.5rem; /* Aumenta o tamanho da fonte para desktops */
+        letter-spacing: 1.5px; /* Ajusta o espaçamento entre letras */
     }
-    
-    .product-details h2 {
-        font-size: 3rem; /* Título ainda maior */
+
+    .slogan {
+        font-size: 0.9rem; /* Aumenta o tamanho da fonte do slogan */
     }
-    
-    .product-description {
-        font-size: 1.3rem; /* Texto ainda maior */
+
+    .slider {
+        height: 400px; /* Aumenta a altura do slider */
+        width: 80%; /* Aumenta a largura do slider */
+    }
+}
+
+/* Telas grandes (1201px ou mais) */
+@media (min-width: 1201px) {
+    .logo {
+        font-size: 2.8rem; /* Aumenta o tamanho da fonte para telas grandes */
+    }
+
+    .slider {
+        height: 450px; /* Aumenta a altura do slider */
+        width: 75%; /* Aumenta a largura do slider */
     }
 }
