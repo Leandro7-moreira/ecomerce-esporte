@@ -441,7 +441,7 @@ footer p {
     }
 
     .products-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 produtos por linha */
+        grid-template-columns: repeat(3, 1fr); /* 4 produtos por linha */
         gap: 30px; /* Espaçamento maior entre os produtos */
     }
 
@@ -468,7 +468,7 @@ footer p {
     }
 
     .products-grid {
-        grid-template-columns: repeat(5, 1fr); /* 5 produtos por linha */
+        grid-template-columns: repeat(3, 1fr); /* 5 produtos por linha */
         gap: 35px; /* Espaçamento amplo entre os produtos */
     }
 
