@@ -130,6 +130,64 @@ body {
     justify-content: space-between; /* Distribui conteúdo verticalmente */
 }
 
+.product-item-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 por linha */
+    gap: 30px;
+    padding: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+  
+  .product-item {
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    height: 100%;
+  }
+  
+  .product-item img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .product-item img:hover {
+    transform: scale(1.05); /* Aumenta levemente a imagem ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para destacar a imagem */
+  }
+  
+  .product-item p {
+    margin-top: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  
+  .product-item button {
+    margin-top: 1rem;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .product-item button:hover {
+    background-color: #00cc6e;
+  }  
+
 /* Animação ao passar o mouse sobre o produto */
 .product:hover {
     transform: translateY(-5px); /* Move levemente para cima */
@@ -221,16 +279,38 @@ body {
   
   /* Estilo dos itens na nova página */
   .product-item {
-    display: flex; /* Usa flexbox para organizar os itens */
-    flex-direction: column; /* Organiza os itens em uma coluna */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    margin-bottom: 20px; /* Adiciona espaço abaixo de cada item */
+    display: grid; /* Muda para grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 2rem; /* Espaçamento interno */
+    background-color: var(--background); /* Fundo escuro */
+  }
+  
+  .product-item > div {
+    background-color: var(--primary); /* Fundo escuro para cada item */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 1rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    transition: var(--transition);
+  }
+  
+  .product-item > div:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: var(--shadow);
   }
   
   .product-item img {
-    max-width: 200px; /* Define a largura máxima da imagem */
-    border-radius: 10px; /* Arredonda as bordas da imagem */
-    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
+    width: 100%; /* Largura total do container */
+    max-width: 300px; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter proporção */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+  }
+  
+  .product-item p {
+    color: var(--text-light); /* Cor do texto */
+    margin-bottom: 15px; /* Espaço abaixo do texto */
+    font-size: 0.9rem; /* Tamanho da fonte */
   }
   
   .product-item button {
@@ -240,6 +320,7 @@ body {
     padding: 10px 15px; /* Adiciona espaçamento interno ao botão */
     border-radius: 5px; /* Arredonda as bordas do botão */
     cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
+    transition: var(--transition); 
   }
   
   .product-item button:hover {
@@ -314,4 +395,35 @@ footer p {
     box-shadow: 0 2px 8px rgba(0, 255, 136, 0.15); /* Sombra discreta com a cor de destaque */
     letter-spacing: 1px; /* Espaçamento entre letras para deixar mais elegante */
     line-height: 1.5; /* Melhora a legibilidade */
+}
+
+.modal {
+    display: none; /* Modal inicialmente oculto */
+    position: fixed; /* Fixa o modal na tela, mesmo ao rolar */
+    z-index: 1000; /* Garante que o modal fique acima de outros elementos */
+    padding-top: 60px; /* Espaçamento superior dentro do modal */
+    left: 0; /* Alinha o modal à esquerda */
+    top: 0; /* Alinha o modal ao topo */
+    width: 100%; /* O modal ocupa toda a largura da tela */
+    height: 100%; /* O modal ocupa toda a altura da tela */
+    overflow: auto; /* Permite rolagem caso o conteúdo ultrapasse a altura */
+    background-color: rgba(0,0,0,0.9); /* Fundo semitransparente preto */
+}
+
+.modal-content {
+    display: block; /* Exibe o conteúdo do modal como bloco */
+    margin: auto; /* Centraliza o conteúdo horizontalmente */
+    max-width: 80%; /* Limita a largura máxima a 80% da tela */
+    max-height: 80%; /* Limita a altura máxima a 80% da tela */
+}
+
+.modal-close {
+    position: absolute; /* Posiciona o botão de fechar de forma absoluta */
+    top: 30px; /* Distância do topo da tela */
+    right: 35px; /* Distância da borda direita da tela */
+    color: #fff; /* Cor branca para o botão de fechar */
+    font-size: 40px; /* Tamanho grande para o botão de fechar */
+    font-weight: bold; /* Negrito para destacar o botão */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
+    z-index: 1001; /* Garante que o botão fique acima do modal */
 }

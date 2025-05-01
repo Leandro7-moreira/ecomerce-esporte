@@ -26,6 +26,7 @@ function changeImage(thumb) {
 // Mostrar detalhes do produto clicado
 function showProductDetails(productId) {
   const products = {
+
     produto1: [
       { img: 'produtos/times/Al Hilal Azul.PNG', desc: 'Camisa Al Hilal Azul - Design moderno com detalhes em azul royal.' },
       { img: 'produtos/times/Al Hilal Branca.PNG', desc: 'Camisa Al Hilal Branca - Elegante uniforme alternativo.' },
@@ -68,6 +69,7 @@ function showProductDetails(productId) {
       { img: 'produtos/times/Vasco Branca 2.PNG', desc: 'Camisa Vasco Branca - Segundo modelo.' },
       { img: 'produtos/times/Vasco Preta.PNG', desc: 'Camisa Vasco Preta - Uniforme alternativo.' }
     ],
+
     produto2: [
       { img: 'produtos/retro/Arsenal Henry.jpg', desc: 'Camisa Retrô Arsenal - Modelo época Henry, vermelho com detalhes em branco.' },
       { img: 'produtos/retro/Barça Rivaldo.PNG', desc: 'Camisa Retrô Barcelona - Modelo época Rivaldo, listras verticais clássicas.' },
@@ -90,12 +92,14 @@ function showProductDetails(productId) {
       { img: 'produtos/retro/Santos Listrado.PNG', desc: 'Camisa Retrô Santos - Modelo listrado histórico.' },
       { img: 'produtos/retro/Santos Neymar Azul.PNG', desc: 'Camisa Retrô Santos - Modelo azul época Neymar.' }
     ],
+
     produto3: [
       { img: 'produtos/selecao/Brasil 2002.jpg', desc: 'Camisa Retrô Seleção Brasil 2002 - Modelo do Pentacampeonato.' },
       { img: 'produtos/selecao/Brasil Azul.jpg', desc: 'Camisa Retrô Seleção Brasil - Modelo azul clássico.' },
       { img: 'produtos/selecao/França.PNG', desc: 'Camisa Retrô Seleção França - Modelo clássico em azul.' },
       { img: 'produtos/selecao/Itália Branca.jpg', desc: 'Camisa Retrô Seleção Itália - Modelo alternativo branco.' }
     ],
+
     produto4: [
       { img: 'produtos/agasalho/Agasalho Arsenal.jpg', desc: 'Conjunto Agasalho Arsenal - Vermelho e preto com design moderno.' },
       { img: 'produtos/agasalho/Agasalho Barça.jpg', desc: 'Conjunto Agasalho Barcelona - Azul e grená oficial.' },
@@ -116,6 +120,7 @@ function showProductDetails(productId) {
       { img: 'produtos/agasalho/Agasalho Santos.jpg', desc: 'Conjunto Agasalho Santos - Branco com detalhes em preto.' },
       { img: 'produtos/agasalho/Agasalho Spurs.jpg', desc: 'Conjunto Agasalho Tottenham - Branco com detalhes em azul.' }
     ],
+
     produto5: [
       { img: 'produtos/bone/Argentina.jpg', desc: 'Boné da Argentina com design esportivo e cores clássicas.' },
       { img: 'produtos/bone/Brasil Amarelo.jpg', desc: 'Boné do Brasil em amarelo com detalhes em verde.' },
@@ -146,6 +151,7 @@ function showProductDetails(productId) {
       { img: 'produtos/bone/Manchester .jpg', desc: 'Boné do Manchester United com design clássico em vermelho.' },
       { img: 'produtos/bone/Spurs .jpg', desc: 'Boné do Tottenham com design moderno em azul e branco.' }
     ],
+    
     produto6: [
       { img: 'produtos/basquete/Brooklin .jpg', desc: 'Camisa do Brooklyn Nets preta com detalhes brancos.' },
       { img: 'produtos/basquete/Bulls Vermelha.jpg', desc: 'Camisa do Chicago Bulls vermelha.' },
@@ -164,15 +170,19 @@ function showProductDetails(productId) {
   const productItems = products[productId];
   const productContent = document.getElementById('product-content');
 
-  productContent.innerHTML = productItems.map(item => `
-    <div class="product-item">
-      <img src="${item.img}" alt="${item.desc}">
-      <p>${item.desc}</p>
-      <button onclick="contactWhatsApp()">Faça seu pedido pelo WhatsApp</button>
-    </div>
-  `).join('');
+  productContent.innerHTML = `
+  <div class="product-item-grid">
+    ${productItems.map(item => `
+      <div class="product-item">
+        <img src="${item.img}" alt="${item.desc}" onclick="openImageModal('${item.img}')">
+        <p>${item.desc}</p>
+        <button onclick="contactWhatsApp()">Faça seu pedido pelo WhatsApp</button>
+      </div>
+    `).join('')}
+  </div>
+`;
 
-  // Oculta elementos da página inicial
+// Oculta elementos da página inicial
   document.querySelector('.products-grid').classList.add('hidden');
   document.querySelector('.slider').classList.add('hidden');
   document.getElementById('product-details').classList.remove('hidden');
@@ -191,4 +201,15 @@ function goBack() {
 // Função para abrir o link do WhatsApp
 function contactWhatsApp() {
   window.open('https://wa.me/message/3HI4APRTY636G1', '_blank');
+}
+
+function openImageModal(src) {
+  const modal = document.getElementById("image-modal");
+  const modalImg = document.getElementById("modal-img");
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+function closeModal() {
+  document.getElementById("image-modal").style.display = "none";
 }
