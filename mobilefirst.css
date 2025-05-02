@@ -7,43 +7,94 @@
     }
 
     .header {
-        padding: 1rem; /* Reduz o espaçamento do cabeçalho */
+        padding: 1.5rem 0.5rem;
+        text-align: center;
     }
 
     .logo {
-        font-size: 1.5rem; /* Ajusta o tamanho da logo */
-        text-align: center; /* Centraliza a logo */
-        max-width: 100%; /* Garante que a logo não ultrapasse o container */
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        text-align: center;
+        max-width: 100%;
     }
 
     .slogan {
-        font-size: 0.7rem; /* Reduz o tamanho do slogan */
-        margin-top: 0.2rem; /* Ajusta o espaçamento superior */
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        margin-top: 0.2rem;
+        text-align: center;
     }
 
     .slider {
-        height: 200px; /* Reduz a altura do slider */
-        width: 100%; /* Garante que o slider ocupe toda a largura */
+        height: 180px;
+        width: 100%;
     }
 
     .products-grid {
-        grid-template-columns: 1fr; /* Uma coluna para melhor visualização em telas pequenas */
-        gap: 15px; /* Reduz o espaçamento entre os produtos */
-        padding: 10px; /* Reduz o padding interno */
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px 0;
     }
 
     .product {
-        padding: 10px; /* Reduz o espaçamento interno dos cards */
+        padding: 14px 8px;
+        border-radius: 10px;
+        margin: 0 5px;
+        text-align: center;
     }
 
     .product-images img.main-img {
-        height: 150px; /* Reduz a altura das imagens dos produtos */
-        object-fit: cover; /* Garante que as imagens fiquem proporcionais */
+        height: 120px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+
+    /* Cards de categoria (ajuste para empilhar e dar espaçamento) */
+    .products-grid > .product {
+        margin-bottom: 18px;
     }
 
     .whatsapp-icon {
-        width: 30px; /* Ajusta o tamanho do ícone do WhatsApp */
-        height: 30px;
+        width: 32px;
+        height: 32px;
+        bottom: 12px;
+        right: 12px;
+    }
+
+    /* Home já está em 1 coluna, reforçar para detalhamento */
+    .product-item-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 10px 0;
+        max-width: 100%;
+    }
+    .product-item {
+        padding: 12px 8px;
+        border-radius: 10px;
+        margin: 0 5px;
+        text-align: center;
+        box-shadow: none;
+        background: var(--primary);
+    }
+    .product-item img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto 10px auto;
+    }
+    /* Modal de imagem responsivo */
+    .modal-content#modal-img {
+        width: 95vw;
+        max-width: 95vw;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -74,17 +125,25 @@
     }
 
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas para melhor aproveitamento do espaço */
-        gap: 20px; /* Ajusta o espaçamento entre os produtos */
-        padding: 20px; /* Ajusta o padding interno */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+        padding: 18px 0;
     }
 
     .product {
-        padding: 15px; /* Ajusta o espaçamento interno dos cards */
+        padding: 16px 10px;
+        border-radius: 12px;
+        margin: 0 8px;
+        text-align: center;
     }
 
     .product-images img.main-img {
-        height: 200px; /* Ajusta a altura das imagens dos produtos */
+        height: 180px;
+    }
+
+    /* Cards de categoria lado a lado com gap maior */
+    .products-grid > .product {
+        margin-bottom: 20px;
     }
 
     .whatsapp-icon {
