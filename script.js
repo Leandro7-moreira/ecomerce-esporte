@@ -176,7 +176,7 @@ function showProductDetails(productId) {
       <div class="product-item">
         <img src="${item.img}" alt="${item.desc}" onclick="openImageModal('${item.img}')">
         <p>${item.desc}</p>
-        <button onclick="contactWhatsApp()">Faça seu pedido pelo WhatsApp</button>
+        <button onclick="contactWhatsApp()">Comprar</button>
       </div>
     `).join('')}
   </div>
@@ -213,3 +213,23 @@ function openImageModal(src) {
 function closeModal() {
   document.getElementById("image-modal").style.display = "none";
 }
+
+// Exibe o botão "Voltar" ao rolar até a metade da página, apenas na página de detalhes
+window.addEventListener('scroll', () => {
+  const backButton = document.querySelector('.back-button');
+  const productDetails = document.getElementById('product-details');
+  const scrollPosition = window.scrollY; // Posição atual do scroll
+  const screenHeight = window.innerHeight; // Altura da tela visível
+
+  // Verifica se o container de detalhes está visível
+  if (!productDetails.classList.contains('hidden')) {
+      // Exibe o botão se o usuário rolar mais da metade da tela
+      if (scrollPosition > screenHeight / 2) {
+          backButton.style.display = 'block'; // Mostra o botão
+      } else {
+          backButton.style.display = 'none'; // Oculta o botão se estiver acima da metade
+      }
+  } else {
+      backButton.style.display = 'none'; // Oculta o botão na página inicial
+  }
+});

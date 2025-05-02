@@ -253,24 +253,27 @@ body {
     color: var(--text-light); /* Define a cor do texto com a variável global */
   }
   
-  /* Botão de voltar */
-  .back-button {
-    background-color: var(--accent); /* Define a cor de fundo do botão com a variável global */
-    color: #fff; /* Define a cor do texto como branco */
-    border: none; /* Remove a borda do botão */
-    padding: 10px 20px; /* Adiciona espaçamento interno ao botão */
-    border-radius: 5px; /* Arredonda as bordas do botão */
-    cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
-    margin-bottom: 20px; /* Adiciona espaço abaixo do botão */
-    position: absolute; /* Posiciona o botão de forma absoluta */
-    top: 850px; /* Define a distância do topo */
-    right: 20px; /* Define a distância do lado direito */
+  /* Botão de voltar fixo na parte inferior */
+.back-button {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px; /* Distância da borda inferior */
+    right: 20px; /* Distância da borda direita */
+    background-color: var(--accent); /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão ao passar o mouse */
     z-index: 1000; /* Garante que o botão fique acima de outros elementos */
-  }
-  
-  .back-button:hover {
+    transition: var(--transition); /* Suaviza a transformação e sombra ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra discreta */
+    display: none; /* Inicialmente oculto */
+}
+
+.back-button:hover {
     background-color: #00cc6e; /* Altera a cor de fundo ao passar o mouse */
-  }
+    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}
   
   /* Oculta o botão de voltar no estado inicial */
   .hidden .back-button {
@@ -314,13 +317,13 @@ body {
   }
   
   .product-item button {
-    background-color: var(--accent); /* Define a cor de fundo do botão com a variável global */
+    background-color: #0b7544; /* Define a cor de fundo do botão com a variável global */
     color: #fff; /* Define a cor do texto como branco */
     border: none; /* Remove a borda do botão */
     padding: 10px 15px; /* Adiciona espaçamento interno ao botão */
     border-radius: 5px; /* Arredonda as bordas do botão */
     cursor: pointer; /* Altera o cursor para indicar que o botão é clicável */
-    transition: var(--transition); 
+    transition: var(--transition); /* Suaviza a transformação e sombra ao passar o mouse */
   }
   
   .product-item button:hover {
