@@ -27,9 +27,31 @@
 
     .slider {
         height: 180px;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .slider img,
+    .slider .slide {
+        width: 100vw;
+        max-width: 100vw;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .product-images img.main-img {
+        height: 180px;
         width: 100%;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 10px auto;
     }
 
+    /* Cards de categoria (ajuste para empilhar e dar espaçamento) */
     .products-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -41,26 +63,6 @@
         border-radius: 10px;
         margin: 0 5px;
         text-align: center;
-    }
-
-    .product-images img.main-img {
-        height: 120px;
-        width: 100%;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto 10px auto;
-    }
-
-    /* Cards de categoria (ajuste para empilhar e dar espaçamento) */
-    .products-grid > .product {
-        margin-bottom: 18px;
-    }
-
-    .whatsapp-icon {
-        width: 32px;
-        height: 32px;
-        bottom: 12px;
-        right: 12px;
     }
 
     /* Home já está em 1 coluna, reforçar para detalhamento */
@@ -312,9 +314,9 @@
     }
 
     .products-grid {
-        grid-template-columns: repeat(4, 1fr); /* Quatro colunas para melhor aproveitamento do espaço */
-        gap: 30px; /* Ajusta o espaçamento entre os produtos */
-        padding: 30px; /* Ajusta o padding interno */
+        grid-template-columns: repeat(3, 1fr); /* Volta para 3 colunas por linha no desktop */
+        gap: 30px;
+        padding: 30px;
     }
 
     .product {
