@@ -1,5 +1,98 @@
 /* Media Queries para Responsividade - Arquivo dedicado apenas para ajustes de layout em diferentes tamanhos de tela */
 
+/* Telas pequenas (até 480px) - Ajustes para dispositivos móveis */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduz o tamanho da fonte para telas pequenas */
+    }
+
+    .header {
+        padding: 1rem; /* Reduz o espaçamento do cabeçalho */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* Ajusta o tamanho da logo */
+        text-align: center; /* Centraliza a logo */
+        max-width: 100%; /* Garante que a logo não ultrapasse o container */
+    }
+
+    .slogan {
+        font-size: 0.7rem; /* Reduz o tamanho do slogan */
+        margin-top: 0.2rem; /* Ajusta o espaçamento superior */
+    }
+
+    .slider {
+        height: 200px; /* Reduz a altura do slider */
+        width: 100%; /* Garante que o slider ocupe toda a largura */
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* Uma coluna para melhor visualização em telas pequenas */
+        gap: 15px; /* Reduz o espaçamento entre os produtos */
+        padding: 10px; /* Reduz o padding interno */
+    }
+
+    .product {
+        padding: 10px; /* Reduz o espaçamento interno dos cards */
+    }
+
+    .product-images img.main-img {
+        height: 150px; /* Reduz a altura das imagens dos produtos */
+        object-fit: cover; /* Garante que as imagens fiquem proporcionais */
+    }
+
+    .whatsapp-icon {
+        width: 30px; /* Ajusta o tamanho do ícone do WhatsApp */
+        height: 30px;
+    }
+}
+
+/* Tablets (481px a 768px) - Ajustes para dispositivos com tela média */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    }
+
+    .header {
+        padding: 2rem; /* Ajusta o espaçamento do cabeçalho */
+    }
+
+    .logo {
+        font-size: 2rem; /* Ajusta o tamanho da logo */
+        text-align: center; /* Centraliza a logo */
+    }
+
+    .slogan {
+        font-size: 0.8rem; /* Ajusta o tamanho do slogan */
+        margin-top: 0.4rem; /* Ajusta o espaçamento superior */
+    }
+
+    .slider {
+        height: 250px; /* Ajusta a altura do slider */
+        width: 90%; /* Garante que o slider ocupe uma boa proporção */
+        margin: 0 auto; /* Centraliza o slider */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas para melhor aproveitamento do espaço */
+        gap: 20px; /* Ajusta o espaçamento entre os produtos */
+        padding: 20px; /* Ajusta o padding interno */
+    }
+
+    .product {
+        padding: 15px; /* Ajusta o espaçamento interno dos cards */
+    }
+
+    .product-images img.main-img {
+        height: 200px; /* Ajusta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 35px; /* Ajusta o tamanho do ícone do WhatsApp */
+        height: 35px;
+    }
+}
+
 /* Tablets (481px a 768px) - Ajustes para dispositivos com tela média */
 @media (min-width: 481px) {
     body {
@@ -46,6 +139,51 @@
 }
 
 /* Laptops (769px a 1024px) - Ajustes para telas de laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 18px; /* Aumenta ainda mais o tamanho da fonte */
+    }
+
+    .header {
+        padding: 3rem; /* Ajusta o espaçamento do cabeçalho */
+    }
+
+    .logo {
+        font-size: 2.5rem; /* Aumenta o tamanho da logo */
+    }
+
+    .slogan {
+        font-size: 0.85rem; /* Ajusta o tamanho do slogan */
+        margin-top: 0.5rem; /* Ajusta o espaçamento superior */
+    }
+
+    .slider {
+        height: 300px; /* Ajusta a altura do slider */
+        width: 85%; /* Garante uma boa proporção */
+        margin: 0 auto; /* Centraliza o slider */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas para melhor aproveitamento do espaço */
+        gap: 25px; /* Ajusta o espaçamento entre os produtos */
+        padding: 25px; /* Ajusta o padding interno */
+    }
+
+    .product {
+        padding: 20px; /* Ajusta o espaçamento interno dos cards */
+    }
+
+    .product-images img.main-img {
+        height: 250px; /* Ajusta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 40px; /* Ajusta o tamanho do ícone do WhatsApp */
+        height: 40px;
+    }
+}
+
+/* Laptops (769px a 1024px) - Ajustes para telas de laptop */
 @media (min-width: 769px) {
     body {
         font-size: 18px; /* Aumenta ainda mais o tamanho da fonte */
@@ -87,6 +225,50 @@
     .whatsapp-icon {
         width: 40px; /* Aumenta o tamanho do ícone do WhatsApp */
         height: 40px;
+    }
+}
+
+/* Desktops (acima de 1024px) - Ajustes para monitores maiores */
+@media (min-width: 1025px) {
+    body {
+        font-size: 20px; /* Aumenta o tamanho da fonte */
+    }
+
+    .header {
+        padding: 4rem; /* Ajusta o espaçamento do cabeçalho */
+    }
+
+    .logo {
+        font-size: 3rem; /* Aumenta o tamanho da logo */
+    }
+
+    .slogan {
+        font-size: 1rem; /* Ajusta o tamanho do slogan */
+    }
+
+    .slider {
+        height: 350px; /* Ajusta a altura do slider */
+        width: 80%; /* Garante uma boa proporção */
+        margin: 0 auto; /* Centraliza o slider */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas para melhor aproveitamento do espaço */
+        gap: 30px; /* Ajusta o espaçamento entre os produtos */
+        padding: 30px; /* Ajusta o padding interno */
+    }
+
+    .product {
+        padding: 25px; /* Ajusta o espaçamento interno dos cards */
+    }
+
+    .product-images img.main-img {
+        height: 300px; /* Ajusta a altura das imagens dos produtos */
+    }
+
+    .whatsapp-icon {
+        width: 45px; /* Ajusta o tamanho do ícone do WhatsApp */
+        height: 45px;
     }
 }
 
