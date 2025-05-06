@@ -203,7 +203,7 @@ function showProductDetails(productId) {
       <div class="product-item">
         <img src="${item.img}" alt="${item.desc}" onclick="openImageModal('${item.img}')">
         <p>${item.desc}</p>
-        <button onclick="contactWhatsApp()">Comprar</button>
+        <button onclick="contactWhatsApp('${item.img}', '${item.desc}')">Comprar</button>
       </div>
     `).join('')}
   </div>
@@ -225,9 +225,25 @@ function goBack() {
   document.querySelector('.whatsapp-icon-container').classList.remove('hidden'); // Exibe botão WhatsApp novamente
 }
 
-// Função para abrir o link do WhatsApp
-function contactWhatsApp() {
-  window.open('https://wa.me/message/3HI4APRTY636G1', '_blank');
+// Função para abrir o link do WhatsApp com a imagem e descrição do produto
+function contactWhatsApp(img, desc) {
+  // Número de telefone do contato (formato internacional, sem espaços ou símbolos)
+  const phoneNumber = "5518997788845"; // Substitua pelo número desejado
+
+  // Gera o URL completo da imagem
+  const imageUrl = `${window.location.origin}/${img}`;
+  
+  // Cria a mensagem com a descrição e o link da imagem
+  const message = `Olá, gostaria de mais informações sobre este produto:\n\n${desc}\n\nVeja a imagem: ${imageUrl}`;
+  
+  // Codifica a mensagem para ser usada na URL
+  const encodedMessage = encodeURIComponent(message);
+  
+  // Gera o link do WhatsApp com o número e a mensagem
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  
+  // Abre o link em uma nova aba
+  window.open(whatsappUrl, '_blank');
 }
 
 function openImageModal(src) {
